@@ -1,0 +1,6 @@
+1. first make build of latest changes
+>>ng build
+
+2. firebase deployment 
+>>firebase deploy
+
