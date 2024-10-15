@@ -1,0 +1,201 @@
+:host {
+  .aboutContainer {
+    display: flex;
+    color: var(--navy);
+    height: auto;
+    min-height: 50rem;
+    position: relative;
+    flex-direction: column;
+    background-color: var(--lightest-slate);
+
+    h2 {
+      position: relative;
+      top: 1rem;
+      display: grid;
+      padding: 1rem 2rem;
+      grid-template-rows: repeat(2, 1fr);
+      place-items: center;
+      row-gap: 2rem;
+
+      .headingMain {
+        display: block;
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+        position: relative;
+      }
+
+      .headingMain::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + 1.8rem);
+        height: 5px;
+        width: 3rem;
+        background: var(--navy);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+      }
+
+      .headingSub {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: center;
+        color: var(--slate);
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 60rem;
+        font-family: var(--font-mono);
+        margin: auto;
+        line-height: 1.6;
+      }
+    }
+
+    .aboutContent {
+      display: grid;
+      padding: 1rem 2rem;
+      position: relative;
+      top: 2rem;
+      grid-template-columns: 1fr;
+      grid-gap: 4rem;
+      background-color: var(--lightest-slate);
+
+      .aboutContentMain {
+        display: block;
+
+        .aboutContentTitle {
+          font-weight: 600;
+          font-size: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .aboutContentDetails {
+          .aboutContentDetailsPara {
+            font-size: 1rem;
+            color: var(--dark-blue);
+            max-width: 60rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+        }
+
+        .btn {
+          text-align: left;
+          margin-top: 30px;
+          margin-bottom: 30px;
+
+          button {
+            width: 200px;
+            height: 60px;
+            background-color: var(--navy);
+            color: var(--white);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+            border: 2px solid var(--navy);
+            transition: var(--transition);
+
+            &:hover {
+              box-shadow: var(--btnShadow);
+              background-color: transparent;
+              color: var(--navy);
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+
+      .aboutContentSkills {
+        display: block;
+
+        .aboutContentTitle {
+          font-weight: 600;
+          font-size: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .skills {
+          display: flex;
+          flex-wrap: wrap;
+          padding-bottom: 6rem;
+          align-items: center;
+
+          .skillsIcon {
+            text-align: center;
+            padding: 0.7rem 3rem;
+            margin-bottom: 1.2rem;
+            margin-right: 1rem;
+            // background: var(--gray-light);
+            border-radius: 5px;
+            font-weight: 500;
+            // filter: drop-shadow(10px 10px 20px var(--navy));
+
+            img {
+              margin: 0 auto;
+              width: 50px;
+              height: auto;
+              // box-shadow: 10px 10px 20px black;
+              -webkit-filter: grayscale(100%);
+              filter: grayscale(100%) contrast(1) drop-shadow(10px 10px 20px var(--navy));
+              -webkit-transition: var(--transition);
+              -moz-transition: var(--transition);
+              transition: var(--transition);
+
+              &:hover {
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+              }
+            }
+
+            .imgResponsive {
+              display: block;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//pc
+
+:host.pc {
+  .aboutContainer {
+    h2 {
+      padding: 3rem 5rem;
+      position: relative;
+      top: 2rem;
+
+      .headingMain {
+        font-size: 3.5rem;
+        font-weight: 600;
+      }
+
+      .headingMain::after {
+        top: calc(100% + 1.5rem);
+        height: 7px;
+        width: 4rem;
+      }
+
+      .headingSub {
+        padding-top: 10px;
+        -webkit-line-clamp: 2;
+        font-weight: 500;
+        font-size: 1.2rem;
+        max-width: 50rem;
+      }
+    }
+
+    .aboutContent {
+      padding: 3rem 5rem;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 8rem;
+    }
+  }
+}

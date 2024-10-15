@@ -1,0 +1,171 @@
+:host {
+  .projectContainer {
+    display: flex;
+    color: var(--navy);
+    height: auto;
+    min-height: 50rem;
+    position: relative;
+    flex-direction: column;
+    background-color: var(--white);
+
+    h2 {
+      position: relative;
+      top: 1rem;
+      display: grid;
+      padding: 1rem 2rem;
+      grid-template-rows: repeat(2, 1fr);
+      place-items: center;
+      row-gap: 2rem;
+
+      .headingMain {
+        display: block;
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        letter-spacing: 3px;
+        text-align: center;
+        position: relative;
+      }
+
+      .headingMain::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + 1.8rem);
+        height: 5px;
+        width: 3rem;
+        background: var(--navy);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+      }
+
+      .headingSub {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: center;
+        color: var(--slate);
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 60rem;
+        margin: auto;
+        line-height: 1.6;
+      }
+    }
+
+    app-project-items {
+      .projectsRowImg {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        overflow: hidden;
+        transform: scaleX(0.9) scaleY(0.9);
+        transition: all ease 1s;
+
+        &:hover {
+          transform: scaleX(1) scaleY(1);
+        }
+      }
+
+      .projectsRowContentTitle {
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      .projectsRowContentDesc {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--dark-slate);
+        max-width: 60rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      .tools {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 0.2rem;
+        justify-content: center;
+
+        .toolsName {
+          font-size: x-small;
+          text-align: center;
+          padding: 0.3rem 0.5rem;
+          margin-bottom: 1.2rem;
+          margin-right: 1rem;
+          background: var(--gray-light);
+          border-radius: 5px;
+          font-weight: 400;
+        }
+      }
+
+      .livBtn {
+        width: 200px;
+        height: 60px;
+        color: var(--white);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        background-color: var(--navy);
+        border: 2px solid var(--navy);
+        transition: var(--transition);
+
+        &:hover {
+          box-shadow: var(--btnShadow);
+          background-color: transparent;
+          color: var(--navy);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+:host.pc {
+  .projectContainer {
+    h2 {
+      padding: 3rem 5rem;
+      position: relative;
+      top: 2rem;
+
+      .headingMain {
+        font-size: 3.5rem;
+        font-weight: 600;
+
+        &::after {
+          top: calc(100% + 1.5rem);
+          height: 7px;
+          width: 4rem;
+        }
+      }
+
+      .headingSub {
+        -webkit-line-clamp: 2;
+        font-weight: 500;
+        font-size: 1.2rem;
+        max-width: 50rem;
+      }
+    }
+
+    app-project-items {
+      .projectsRowContentTitle {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .projectsRowContentDesc {
+        text-align: left;
+      }
+      .tools {
+        justify-content: left;
+      }
+    }
+  }
+}

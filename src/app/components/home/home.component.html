@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="homeContainer">
+    <div class="socialIcons" *ngIf="isMobile">
+      <div class="button linBtn">
+        <div class="icon" (click)="redirectToLinkdin()">
+          <i class="bx bxl-linkedin"></i>
+        </div>
+        <span>Linkedin</span>
+      </div>
+      <div class="button gitBtn">
+        <div class="icon">
+          <i class="bx bxl-github" (click)="redirectToGithub()"></i>
+        </div>
+        <span>Github</span>
+      </div>
+      <div class="button instaBtn">
+        <div class="icon">
+          <i class="bx bxl-instagram-alt" (click)="redirectToInsta()"></i>
+        </div>
+        <span>Instagram</span>
+      </div>
+    </div>
+    <div class="homeContent">
+      <h1
+        class="name"
+        data-aos="fade-right"
+        data-aos-delay="300"
+        data-aos-duration="1000"
+        data-aos-easing="ease forwards"
+        data-aos-offset="100"
+        data-aos-once="true"
+      >
+        Hey, I'm Rajkiran Jaiswar
+      </h1>
+      <div class="info">
+        <p>
+          I'm a passionate and skilled Softwear Engineer from Mumbai. 
+          I build things for the web. i'm always curious to learn more when it comes to new technologies and creative coding.
+          <br>
+          Angular | Node.js | SQL | JavaScript | Typescript | Web development | Problem Solving | Git | GitLab
+        </p>
+      </div>
+      <div class="btn">
+        <button class="resume-btn" (click)="redirectToResume()"><span></span> Resume</button>
+        <button class="project-btn" (click)="redirectToProject()"><span></span> Projects</button>
+      </div>
+    </div>
+    <div class="email" *ngIf="isMobile">
+      <a href="mailto:rajjaiswar1256@gmail.com">rajjaiswar1256&#64;gmail.com</a>
+    </div>
+    <div class="scrollDown" (click)="redirectToAbout()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>

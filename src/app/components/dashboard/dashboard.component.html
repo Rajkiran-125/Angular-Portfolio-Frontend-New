@@ -1,0 +1,55 @@
+<app-loader *ngIf="loader"></app-loader>
+<div class="sidebarContainer">
+    <app-topbar (sidenavToggle)="drawer.toggle()" Responsive></app-topbar>
+    <mat-drawer-container class="drawerContainer" hasBackdrop="true">
+      <mat-drawer class="circularDrawer" #drawer mode="over" position="end">
+        <div class="drawerInfo">
+          <ul (click)="toggle()">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </mat-drawer>
+    </mat-drawer-container>
+    <div></div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+    <!-- <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Dashboard</span></h1> -->
+    <h1> <span class="yellow">Dashboard</span></h1>
+        <h2>Submit form details</h2>
+        <!-- {{contactList | json}} -->
+        <table class="container">
+          <thead>
+            <tr>
+              <th><h1>Full Name</h1></th>
+              <th><h1>Contact</h1></th>
+              <th><h1>Email</h1></th>
+              <th><h1>Subject</h1></th>
+              <th><h1>message</h1></th>
+              <th><h1>Action</h1></th>
+            </tr>
+          </thead>
+          <!-- {{contactList | json}} -->
+          <tbody>
+            <tr *ngFor="let contact of contactList">
+              <!-- {{contact}} -->
+                <td>{{contact.FullName}}</td>
+                <td>{{contact.ContactNumber}}</td>
+                <td>{{contact.Email}}</td>
+                <td>{{contact.Subject}}</td>
+                <td>{{contact.Message}}</td>
+                <td>
+                    <button (click)="deleteContact(contact.Id)"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+</div>

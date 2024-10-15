@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="projectContainer">
+    <h2 class="heading">
+      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Projects</span>
+      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Here you will find some of the personal and clients projects on that i
+        worked with their source code and live link.
+      </span>
+    </h2>
+
+    <app-project-items Responsive>
+      <img src="../../../assets/projects/pitch.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
+      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        UNFYD PITCH
+      </h3>
+      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        It is an Angular and node.js base project. Deveoped pitch module that sends Campaigns to targeted Audience
+        through various channels like whatsapp, Email, Sms and Voice.
+      </p>
+      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        <div class="toolsName" *ngFor="let tools of firstPoject">
+          {{ tools.name | uppercase }}
+        </div>
+      </div>
+      <button mat-raised-button class="livBtn" (click)="projectOne()">
+        Live Link
+      </button>
+    </app-project-items>
+
+    <!-- <app-project-items Responsive>
+      <img src="../../../assets/projects/pitch.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
+      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Project Two
+      </h3>
+      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dicta
+        obcaecati maxime ipsa labore minima aliquid sapiente ex odit inventore
+        minus, quisquam quis numquam incidunt dolore corrupti! Accusamus, sit
+        at.
+      </p>
+      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        <div class="toolsName" *ngFor="let tools of secoundProject">
+          {{ tools.name | uppercase }}
+        </div>
+      </div>
+      <button mat-raised-button class="livBtn" (click)="projectTwo()">
+        Live Link
+      </button>
+    </app-project-items> -->
+
+    <!-- <app-project-items Responsive>
+      <img src="../../../assets/projects/project.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
+      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Project Three
+      </h3>
+      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+        numquam possimus blanditiis odit nulla, odio eos non unde ipsum incidunt
+        quam accusantium consequuntur repudiandae recusandae eius magni ipsam
+        nisi deleniti!
+      </p>
+      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        <div class="toolsName" *ngFor="let tools of thirdProject">
+          {{ tools.name | uppercase }}
+        </div>
+      </div>
+      <button mat-raised-button class="livBtn" (click)="projectThree()">
+        Live Link
+      </button>
+    </app-project-items> -->
+
+
+  </div>
+</div>

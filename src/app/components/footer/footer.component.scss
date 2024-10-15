@@ -1,0 +1,228 @@
+:host {
+    display: block;
+
+    footer {
+      color: var(--white);
+      background-color: var(--navy);
+      padding: 50px 50px;
+
+      .footerContainer {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+
+        .row {
+          display: grid;
+          grid-template-columns: 1fr;
+          place-items: center;
+
+          .social-icons {
+            display: flex;
+            flex-direction: row;
+
+            .button {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              float: left;
+              margin: 5px 5px auto;
+              cursor: pointer;
+              overflow: hidden;
+              box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+              background-color: var(--white);
+              transition: var(--transition);
+
+              .icon {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                box-sizing: border-box;
+                transition: var(--transition);
+
+                a {
+                  text-decoration: none;
+                  color: var(--white);
+
+                  i {
+                    font-size: 25px;
+                    line-height: 40px;
+                    transition: var(--transition);
+                  }
+                }
+              }
+            }
+
+
+            .button:hover {
+              transform: translateY(-5px);
+            }
+          }
+
+          .button:nth-child(1) .icon {
+            background-color: var(--fb);
+          }
+
+          .button:nth-child(1):hover .icon {
+            background: var(--white);
+
+            a {
+              color: var(--fb);
+
+              i {
+                font-size: 35px;
+              }
+            }
+          }
+
+          .button:nth-child(2) .icon {
+            background-color: var(--lin);
+          }
+
+          .button:nth-child(2):hover .icon {
+            background: var(--white);
+
+            a {
+              color: var(--lin);
+
+              i {
+                font-size: 35px;
+              }
+            }
+          }
+
+          .button:nth-child(3) .icon {
+            background: var(--instaBg);
+          }
+
+          .button:nth-child(3):hover .icon {
+            background: var(--white);
+
+            a {
+              color: var(--insta);
+
+              i {
+                font-size: 35px;
+              }
+            }
+          }
+
+          .button:nth-child(4) .icon {
+            background-color: var(--github);
+          }
+
+          .button:nth-child(4):hover .icon {
+            background: var(--white);
+
+            a {
+              color: var(--github);
+
+              i {
+                font-size: 35px;
+              }
+            }
+          }
+
+          .button:nth-child(5) .icon {
+            background-color: var(--youtube);
+          }
+
+          .button:nth-child(5):hover .icon {
+            background: var(--white);
+
+            a {
+              color: var(--youtube);
+
+              i {
+                font-size: 35px;
+              }
+            }
+          }
+
+          .page-scroll {
+            display: block;
+            text-align: center;
+
+            a {
+              text-decoration: none;
+              background: transparent;
+            }
+
+            #to-top {
+              transition: all 0.5s;
+
+              img {
+                width: 60px;
+                padding: 5px;
+                animation: fadeInOut 3s infinite;
+              }
+            }
+          }
+
+          .copyright {
+            display: block;
+            margin-top: 10px;
+            font-weight: 300;
+            color: var(--slate);
+            text-align: center;
+
+            p {
+              font-family: var(--font-mono);
+              font-size: 14px;
+              text-transform: uppercase;
+            }
+          }
+
+          .divider {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+
+          mat-divider {
+            margin-bottom: 16px;
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  // pc
+
+  :host.pc {
+    footer {
+      .footerContainer {
+        .row {
+          .social-icons {
+            .button {
+              width: 60px;
+              height: 60px;
+
+              .icon {
+                height: 60px;
+                width: 60px;
+
+                a {
+                  i {
+                    line-height: 60px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  @keyframes fadeInOut {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }

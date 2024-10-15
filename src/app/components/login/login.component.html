@@ -1,0 +1,157 @@
+<app-loader *ngIf="loader"></app-loader>
+<div class="sidebarContainer">
+  <app-topbar (sidenavToggle)="drawer.toggle()" Responsive></app-topbar>
+  <mat-drawer-container class="drawerContainer" hasBackdrop="true">
+    <mat-drawer class="circularDrawer" #drawer mode="over" position="end">
+      <div class="drawerInfo">
+        <ul (click)="toggle()">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#login">Logout</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+      </div>
+    </mat-drawer>
+  </mat-drawer-container>
+  <div></div>
+</div>
+<br>
+<br>
+<br>
+<!-- <div class="container">
+  <div class="contactContainer">
+    <h2 class="heading">
+      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Login</span>
+      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Login to see Dashboard
+      </span>
+    </h2>
+    <div class="loginFormContainer" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000"
+      data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+      <form action="javacript:void(0)" class="loginForm">
+        <mat-grid-list cols="4" rowHeight="80px" gutterSize="5px" [formGroup]="loginForm">
+
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="text" placeholder="Enter Your Email" />
+              <mat-error *ngIf="
+                    loginForm.controls.email.touched &&
+                    loginForm.controls.email.invalid
+                  ">
+                <span *ngIf="loginForm.controls.email.errors.pattern">Invalid Email, Please provide a valid
+                  email.</span>
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="text" placeholder="Enter Your Password" />
+              <mat-error *ngIf="
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.invalid
+                  ">
+                <span *ngIf="loginForm.controls.password.errors.pattern">This is invalid name,Please Check.</span>
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+            <div class="btn">
+              <button type="submit" (click)='login()' [disabled]="!(loginForm.valid && loginForm.dirty)">
+                Send
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="contactContainer">
+    <h2 class="heading">
+      <span
+        class="headingMain"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+        data-aos-easing="ease forwards"
+        data-aos-offset="100"
+        data-aos-once="true"
+        >Login</span
+      >
+      <span
+        class="headingSub"
+        data-aos="fade-up"
+        data-aos-delay="150"
+        data-aos-duration="1000"
+        data-aos-easing="ease forwards"
+        data-aos-offset="100"
+        data-aos-once="true"
+      >
+      Login to see Dashboard
+      </span>
+    </h2>
+    <div
+      class="contactFormContainer"
+      data-aos="fade-up"
+      data-aos-delay="250"
+      data-aos-duration="1000"
+      data-aos-easing="ease forwards"
+      data-aos-offset="100"
+      data-aos-once="true"
+    >
+    <!-- action="javacript:void(0)" -->
+    <form
+    [formGroup]="loginForm"
+        class="loginForm"
+      >
+        <mat-grid-list
+          cols="4"
+          rowHeight="80px"
+          gutterSize="5px"
+        >
+        <mat-grid-tile colspan="4">
+          <mat-form-field appearance="fill">
+            <mat-label>UserName</mat-label>
+            <input matInput formControlName="userName" type="text" placeholder="Enter Your userName" />
+            <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              <!-- <span *ngIf="loginForm.controls.email.errors.pattern">Invalid Email, Please provide a valid
+                email.</span> -->
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" placeholder="Enter Your Password" />
+            <mat-error *ngIf="
+                  loginForm.controls.password.touched &&
+                  loginForm.controls.password.invalid
+                ">
+              <span *ngIf="loginForm.controls.password.errors.pattern">This is invalid password,Please Check.</span>
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+          <div class="btn">
+            <button type="submit" (click)="login()" [disabled]="!(loginForm.valid && loginForm.dirty)">
+              Login
+            </button>
+          </div>
+        </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </div>
+  </div>
+</div>

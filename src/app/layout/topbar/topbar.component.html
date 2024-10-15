@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="headerContainer">
+    <mat-toolbar class="header">
+      <div class="headerLogo">
+        <!-- <div
+          class="home-img"
+          data-aos="flip-down"
+          data-aos-easing="ease-in"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
+          <div class="img-circle">
+            <span></span>
+            <span></span>
+            <div class="image">
+              <img src="../../../assets/img/logo.png" alt="" />
+            </div>
+          </div>
+        </div> -->
+        <!-- <p class="navTitle">Rajkiran Jaiswar</p> -->
+      </div>
+
+      <span class="spacer"></span>
+      <div class="navItems" *ngIf="!isMobile">
+        <ul>
+          <li><a style="--i: 1" href="#home" (click)="setActive('home')">Home</a></li>
+          <li><a style="--i: 2" href="#about" (click)="setActive('about')">About</a></li>
+          <li><a style="--i: 3" href="#projects" (click)="setActive('projects')">Projects</a></li>
+          <li><a style="--i: 4" href="#contact" (click)="setActive('contact')">Contact</a></li>
+          <li *ngIf="isLogin()"><a style="--i: 5" routerLink="/dashboard" (click)="setActive('dashboard')">Dashboard</a></li>
+          <li *ngIf="!isLogin()"><a style="--i: 6" routerLink="/login" (click)="setActive('login')">Login</a></li>
+          <li *ngIf="isLogin()"><a style="--i: 7"  (click)="logout(); setActive('logout')">Logout</a></li>
+        </ul>
+      </div>
+
+      <div
+        id="humMenu"
+        (click)="toggleSidenav()"
+        [class.openMenu]="isMenuOpen"
+        *ngIf="isMobile"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </mat-toolbar>
+  </div>
+</div>
