@@ -22,6 +22,7 @@ export class SidenavbarComponent   {
 
   constructor(private observer: BreakpointObserver, private auth : AuthService, private router: Router,) {}
 
+  
   ngOnInit(): void {
     this.observer.observe(['(min-width: 800px)']).subscribe((res) => {
       this.isMobile = res.matches;
