@@ -75,81 +75,195 @@
 </div> -->
 
 <div class="container">
-  <div class="contactContainer">
+  <div class="contactContainer" *ngIf="tab == 'login'">
     <h2 class="heading">
-      <span
-        class="headingMain"
-        data-aos="fade-up"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-        >Login</span
-      >
-      <span
-        class="headingSub"
-        data-aos="fade-up"
-        data-aos-delay="150"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-      >
-      Login to see Dashboard
+      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Login</span>
+      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Login to see Dashboard
       </span>
     </h2>
-    <div
-      class="contactFormContainer"
-      data-aos="fade-up"
-      data-aos-delay="250"
-      data-aos-duration="1000"
-      data-aos-easing="ease forwards"
-      data-aos-offset="100"
-      data-aos-once="true"
-    >
-    <!-- action="javacript:void(0)" -->
-    <form
-    [formGroup]="loginForm"
-        class="loginForm"
-      >
-        <mat-grid-list
-          cols="4"
-          rowHeight="80px"
-          gutterSize="5px"
-        >
-        <mat-grid-tile colspan="4">
-          <mat-form-field appearance="fill">
-            <mat-label>UserName</mat-label>
-            <input matInput formControlName="userName" type="text" placeholder="Enter Your userName" />
-            <mat-error *ngIf="
+    <div class="contactFormContainer" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000"
+      data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+      <!-- action="javacript:void(0)" -->
+      <form [formGroup]="loginForm" class="loginForm" *ngIf="tab == 'login'">
+        <mat-grid-list cols="4" rowHeight="80px" gutterSize="5px">
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>UserName</mat-label>
+              <input matInput formControlName="userName" type="text" placeholder="Enter Your userName" />
+              <mat-error *ngIf="
                   loginForm.controls.userName.touched &&
                   loginForm.controls.userName.invalid
                 ">
-              <!-- <span *ngIf="loginForm.controls.email.errors.pattern">Invalid Email, Please provide a valid
+                <!-- <span *ngIf="loginForm.controls.email.errors.pattern">Invalid Email, Please provide a valid
                 email.</span> -->
-            </mat-error>
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="4">
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput formControlName="password" type="password" placeholder="Enter Your Password" />
-            <mat-error *ngIf="
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Enter Your Password" />
+              <mat-error *ngIf="
                   loginForm.controls.password.touched &&
                   loginForm.controls.password.invalid
                 ">
-              <span *ngIf="loginForm.controls.password.errors.pattern">This is invalid password,Please Check.</span>
-            </mat-error>
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="4">
-          <div class="btn">
-            <button type="submit" (click)="login()" [disabled]="!(loginForm.valid && loginForm.dirty)">
-              Login
-            </button>
-          </div>
-        </mat-grid-tile>
+                <span *ngIf="loginForm.controls.password.errors.pattern">This is invalid password,Please Check.</span>
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+            <div class="btn">
+              <button type="submit" (click)="login()" [disabled]="!(loginForm.valid && loginForm.dirty)">
+                Login
+              </button>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+
+              <p style="color: #ffff;">Don't have a account</p><button (click)="tab = 'verifyCode'" class="signUp-btn" >SignUp</button>
+
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </div>
+  </div>
+
+  <div class="contactContainer" *ngIf="tab == 'verifyCode'">
+    <h2 class="heading">
+      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Verify Code</span>
+      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Verify code to Signup
+      </span>
+    </h2>
+    <div class="contactFormContainer" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000"
+      data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+
+      <!-- Code verificaiton Form -->
+      <form [formGroup]="verifycationCodeForm" class="loginForm" *ngIf="tab == 'verifyCode'">
+        <mat-grid-list cols="4" rowHeight="80px" gutterSize="5px">
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>User Name</mat-label> 
+              <input matInput formControlName="userName" type="text" placeholder="Enter Your User Name" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Verification Code</mat-label> 
+              <input matInput formControlName="code" type="password" placeholder="Enter Your Code" />
+                <!-- <mat-error *ngIf="
+                    loginForm.controls.userName.touched &&
+                    loginForm.controls.userName.invalid
+                  ">
+                </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <div class="btn">
+              <button type="submit" (click)="tab = 'signUp'" [disabled]="!(verifycationCodeForm.valid && verifycationCodeForm.dirty)">
+                Verify
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="contactContainer" *ngIf="tab == 'signUp'">
+    <h2 class="heading">
+      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Signup</span>
+      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+        Signup to see Dashboard
+      </span>
+    </h2>
+    <div class="contactFormContainer" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000"
+      data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
+
+      <!-- Singup Form -->
+      <form [formGroup]="signUpForm" class="loginForm" *ngIf="tab == 'signUp'">
+        <mat-grid-list cols="4" rowHeight="80px" gutterSize="5px">
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>First Name</mat-label> 
+              <input matInput formControlName="firstName" type="text" placeholder="Enter Your firstName" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label> 
+              <input matInput formControlName="lastName" type="text" placeholder="Enter Your Last Name" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label> 
+              <input matInput formControlName="email" type="email" placeholder="Enter Your Email" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>User Name</mat-label> 
+              <input matInput formControlName="userName" type="text" placeholder="Enter Your User Name" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label> 
+              <input matInput formControlName="password" type="text" placeholder="Enter Your Password" />
+              <!-- <mat-error *ngIf="
+                  loginForm.controls.userName.touched &&
+                  loginForm.controls.userName.invalid
+                ">
+              </mat-error> -->
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="4">
+            <div class="btn">
+              <button type="submit" (click)="signUp()" [disabled]="!(verifycationCodeForm.valid && verifycationCodeForm.dirty)">
+                Singup
+              </button>
+            </div>
+          </mat-grid-tile>
         </mat-grid-list>
       </form>
     </div>

@@ -24,6 +24,7 @@ export class LoginComponent {
 
   radius: number = 20;
   color: string = '#00909c';
+  tab: string = 'login'
 
   @ViewChild(TopbarComponent) topbar!: TopbarComponent;
 
@@ -31,6 +32,8 @@ export class LoginComponent {
 
   loader: boolean = false;
   loginForm: any = FormGroup;
+  verifycationCodeForm: any = FormGroup;
+  signUpForm: any = FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -49,6 +52,17 @@ export class LoginComponent {
     });
     this.observer.observe(['(min-width: 800px)']).subscribe((res) => {
       this.isMobile = res.matches;
+    });
+    this.verifycationCodeForm = this.fb.group({
+      userName: [],
+      code: []
+    });
+    this.signUpForm = this.fb.group({
+      firstName: [],
+      lastName: [],
+      email: [],
+      userName: [],
+      password: [],
     });
   }
 
@@ -100,15 +114,82 @@ export class LoginComponent {
             localStorage.setItem('profile', JSON.stringify(res['results'].data[0]));
             this.router.navigate(['/dashboard']);
             this.snackbar.openSnackBar('Login Successfully', 'success', 'Close');
-          }else{
+            this.loginForm.reset();
+          } else {
             this.snackbar.openSnackBar('Username or password is incorrect', 'error', 'Close');
           }
-        }else{
+        } else {
           this.loader = false;
         }
         console.log('login', res);
       })
     }
+  }
+
+  verifyCode() {
+    this.loader = true;
+    let obj = {
+      "data": {
+        "spname": "sp_VerificationCode",
+        "parameters": {
+          "flag": "verify",
+          "userName": this.verifycationCodeForm.value.userName,
+          "code": this.verifycationCodeForm.value.code
+        }
+      }
+    }
+
+    this.api.post('index/json', obj).subscribe(res =>{
+      if(res['code'] == 200){
+        if(res['results'].data[0].results == 'Code verifyed successfully'){
+          this.loader = false;
+          this.tab = 'signUp';
+          localStorage.setItem('verificationId', res['results'].data[0].id);
+          this.snackbar.openSnackBar(res['results'].data[0].results, 'success', 'Close');
+          this.verifycationCodeForm.reset();
+        }else{
+          this.loader = false;
+          this.snackbar.openSnackBar('Username or code is incorrect', 'error', 'Close');
+        }
+      }
+    })
+
+  }
+
+  signUp() {
+    this.loader = true;
+    let formData = {
+      "firstName":this.signUpForm.value.firstName,
+      "lastName":this.signUpForm.value.lastName,
+      "email":this.signUpForm.value.email,
+      "userName":this.signUpForm.value.userName,
+      "password":this.signUpForm.value.password,
+      "createdBy": localStorage.getItem('verificationId')
+
+    }
+
+    let obj = {
+      "data": {
+        "spname": "sp_UserSignUp",
+        "parameters": {
+          "flag": "signUp",
+          "json_data": formData
+        }
+      }
+    }
+
+    this.api.post('index/json',obj).subscribe(res =>{
+      if(res['code'] == 200){
+        if(res['results'].data[0].results == 'SignUp successfully'){
+          this.loader = false;
+          this.snackbar.openSnackBar(res['results'].data[0].results, 'success', 'Close');
+          this.tab = 'login';
+          this.signUpForm.reset();
+        }
+      }else{
+        this.loader = false;
+      }
+    })
   }
 
   toggle = () => {

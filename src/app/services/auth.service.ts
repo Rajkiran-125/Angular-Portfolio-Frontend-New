@@ -52,6 +52,7 @@ export class AuthService {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         localStorage.removeItem('profile');
+        localStorage.removeItem('verificationId');
         this.snackbar.openSnackBar('Logout', 'success');
         this.router.navigate(['/login']);
       }

@@ -92,7 +92,6 @@ export class ContactComponent {
       this.snackbar.openSnackBar(res['results']['data'][0]['results'], 'success');
       this.contactForm.reset();
     })
-
     console.log(this.contactForm);
   }
 
