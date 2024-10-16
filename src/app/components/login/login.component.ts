@@ -151,6 +151,8 @@ export class LoginComponent {
           this.loader = false;
           this.snackbar.openSnackBar('Username or code is incorrect', 'error', 'Close');
         }
+      }else{
+        this.loader = false;
       }
     })
 
