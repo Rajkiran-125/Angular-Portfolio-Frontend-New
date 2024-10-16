@@ -171,7 +171,7 @@
 
           <mat-grid-tile colspan="4">
             <div class="btn">
-              <button type="submit" (click)="tab = 'signUp'" [disabled]="!(verifycationCodeForm.valid && verifycationCodeForm.dirty)">
+              <button type="submit" (click)="verifyCode()" [disabled]="!(verifycationCodeForm.valid && verifycationCodeForm.dirty)">
                 Verify
               </button>
             </div>
