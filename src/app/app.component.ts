@@ -9,7 +9,7 @@ import * as Aos from 'aos';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Joefolio';
+  title = 'Rajkiran';
 
   isConfirmationRoute: boolean = false;
 
