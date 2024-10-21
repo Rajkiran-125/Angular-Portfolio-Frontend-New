@@ -141,7 +141,7 @@ export class LoginComponent {
 
     this.api.post('index/json', obj).subscribe(res =>{
       if(res['code'] == 200){
-        if(res['results'].data[0].results && res['results'].data[0].results == 'Code verifyed successfully'){
+        if(res['results'].data && res['results'].data[0].results && res['results'].data[0].results == 'Code verifyed successfully'){
           this.loader = false;
           this.tab = 'signUp';
           localStorage.setItem('verificationId', res['results'].data[0].id);
