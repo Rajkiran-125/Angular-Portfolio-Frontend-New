@@ -165,6 +165,7 @@
 :host.pc {
   .headerContainer {
     .header {
+      border-bottom: 3px solid var(--green);
       height: 5rem;
 
       .navItems {

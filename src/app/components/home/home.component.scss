@@ -2,19 +2,21 @@
   .homeContainer {
     display: flex;
     color: var(--black);
+    // rgba(197, 225, 235, 0.8),
+    // rgba(193, 187, 218, 0.8)
     background: linear-gradient(
         to right,
-        rgba(197, 225, 235, 0.8),
-        rgba(193, 187, 218, 0.8)
+        rgba(197, 225, 235, 0.703),
+        rgba(193, 187, 218, 0.702)
       ),
-      url(../../../assets/img/bg.jpg);
+      url(../../../assets/img/new_bg2.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     min-height: 50rem;
     position: relative;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
+    // clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
 
     .socialIcons {
       display: flex;
@@ -295,7 +297,7 @@
 
 :host.pc {
   .homeContainer {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+    // clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
 
     .email {
       display: block;
