@@ -49,7 +49,8 @@ export class ContactComponent {
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       name: [null, [Validators.pattern(Globalconstant.nameRegex)]],
-      contactNumber: [null, [Validators.pattern(Globalconstant.contactNumberRegex)]],
+      // contactNumber: [null, [Validators.pattern(Globalconstant.contactNumberRegex)]],
+      contactNumber: [null],
       email: [null, [Validators.pattern(Globalconstant.emailRegex)]],
       subject: [null, [Validators.minLength(10)]],
       message: [null, [Validators.minLength(20)]],
