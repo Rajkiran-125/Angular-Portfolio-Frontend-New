@@ -25,38 +25,17 @@ export class ProjectsComponent {
 
   secoundProject: Tools[] = [
     {
-      name: 'Java',
+      name: 'Angular',
     },
     {
-      name: 'Spring boot',
+      name: 'Node.js',
     },
     {
-      name: 'React',
-    },
-    {
-      name: 'Jhipster',
-    },
-    {
-      name: 'Redis',
-    },
-    {
-      name: 'ActiveMQ',
-    },
-    {
-      name: 'Apache Camel',
-    },
-    {
-      name: 'Docker',
-    },
-    {
-      name: 'Grafana',
+      name: 'Mssql',
     },
     {
       name: 'GIT',
-    },
-    {
-      name: 'GITHub',
-    },
+    }
   ];
 
   thirdProject: Tools[] = [

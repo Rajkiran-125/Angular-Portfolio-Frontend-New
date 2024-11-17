@@ -34,7 +34,7 @@ export const environment = {
   // project
 
   projectOne: 'https://cx7.unfyd.com/pitch/#/login',
-  projectTwo: 'https://www.flipkart.com/',
+  projectTwo: 'https://chat-app-frontend-12bbe.web.app/',
   projectThree:
     'https://www.flipkart.com/',
 
