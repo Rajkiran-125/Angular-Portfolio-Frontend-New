@@ -1,12 +1,12 @@
 :host {
   .projectContainer {
     display: flex;
-    color: var(--navy);
+    color: var(--white);
     height: auto;
     min-height: 50rem;
     position: relative;
     flex-direction: column;
-    background-color: var(--white);
+    background-color: var(--mroon-neon);
 
     h2 {
       position: relative;
@@ -46,7 +46,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-align: center;
-        color: var(--slate);
+        color: var(--white);
         font-family: var(--font-mono);
         font-size: 1rem;
         font-weight: 300;
@@ -80,7 +80,7 @@
       .projectsRowContentDesc {
         font-family: var(--font-mono);
         font-size: 1rem;
-        color: var(--dark-slate);
+        color: var(--white);
         max-width: 60rem;
         line-height: 1.5;
         margin-bottom: 0.5rem;

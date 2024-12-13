@@ -6,7 +6,7 @@
     min-height: 50rem;
     position: relative;
     flex-direction: column;
-    background-color: var(--lightest-slate);
+    background-color: var(--yello-neon);
 
     h2 {
       position: relative;
@@ -62,7 +62,7 @@
       top: 2rem;
       grid-template-columns: 1fr;
       grid-gap: 4rem;
-      background-color: var(--lightest-slate);
+      background-color: var(--yello-neon);
 
       .aboutContentMain {
         display: block;

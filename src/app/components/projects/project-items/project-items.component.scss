@@ -1,11 +1,11 @@
 :host {
   .projectItemContainer {
     display: flex;
-    color: var(--navy);
+    color: var(--white);
     height: auto;
     position: relative;
     flex-direction: column;
-    background-color: var(--white);
+    background-color: var(--mroon-neon);
 
     .projectsContent {
       display: block;
@@ -30,7 +30,7 @@
 
           .toolTitle {
             font-weight: bold;
-            color: var(--navy);
+            color: var(--white);
           }
 
           .btn {

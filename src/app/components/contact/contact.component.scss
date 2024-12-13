@@ -2,12 +2,13 @@
   .contactContainer {
     display: flex;
     color: black;
-    background: linear-gradient(
-        to right,
-        rgba(217, 228, 179, 0.8),
-        rgba(136, 158, 168, 0.8)
-      ),
-      url(../../../assets/img/common-bg.svg);
+    // background: linear-gradient(
+    //     to right,
+    //     rgba(217, 228, 179, 0.8),
+    //     rgba(136, 158, 168, 0.8)
+    //   ),
+    //   url(../../../assets/img/common-bg.svg);
+    background-color: var(--red-neon);
     background-position: center;
     height: auto;
     position: relative;
