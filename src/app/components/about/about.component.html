@@ -1,73 +1,34 @@
-<div class="container">
-  <div class="aboutContainer">
-    <h2>
-      <span
-        class="headingMain"
-        data-aos="fade-up"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-        >About Me</span
-      >
-      <span
-        class="headingSub"
-        data-aos="fade-up"
-        data-aos-delay="150"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-      >
+<section class="about-section">
+  <div class="about-container">
+    <!-- Section heading -->
+    <div class="section-heading" data-aos="fade-up" data-aos-once="true">
+      <span class="heading-label">About Me</span>
+      <h2 class="heading-title">Get to know me</h2>
+      <p class="heading-subtitle">
         Here you will find more information about me, what I do, and my current
-        skills mostly in terms of programming and technology.
-      </span>
-    </h2>
-    <div class="aboutContent">
-      <div class="aboutContentMain">
-        <h3
-          class="aboutContentTitle"
-          data-aos="fade-down-right"
-          data-aos-delay="160"
-          data-aos-duration="1000"
-          data-aos-easing="ease forwards"
-          data-aos-offset="100"
-          data-aos-once="true"
-        >
-          Get to know me!
-        </h3>
-        <div class="aboutContentDetails">
-          <p
-            class="aboutContentDetailsPara"
-            data-aos="fade-up-right"
-            data-aos-delay="180"
-            data-aos-duration="1000"
-            data-aos-easing="ease forwards"
-            data-aos-offset="100"
-            data-aos-once="true"
-          >
+        skills in programming and technology.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <!-- About text -->
+      <div class="about-text" data-aos="fade-right" data-aos-delay="200" data-aos-once="true">
+        <div class="glass-card about-card">
+          <p class="about-para">
             I'm a passionate and dedicated
             <strong>Full-Stack Web Developer</strong> with a proven track record
             of creating <strong>robust</strong> and
             <strong>scalable</strong> web applications. My expertise spans both
-            front-end and back-end technologies, including Node.js, Mssql and
-            Angular. With a keen eye for design and a commitment to clean,
+            front-end and back-end technologies, including Node.js, MSSQL and
+            Angular.
+          </p>
+          <p class="about-para">
+            With a keen eye for design and a commitment to clean,
             efficient code, I strive to deliver exceptional user experiences. I
             excel in problem-solving and collaborating with cross-functional
-            teams to deliver innovative solutions. I'm excited to leverage my
-            skills to tackle new challenges and drive innovation in the world of
-            Full Stack development.
+            teams to deliver innovative solutions.
           </p>
-          <p
-            class="aboutContentDetailsPara"
-            data-aos="fade-right"
-            data-aos-delay="180"
-            data-aos-duration="1000"
-            data-aos-easing="ease forwards"
-            data-aos-offset="100"
-            data-aos-once="true"
-          >
+          <p class="about-para">
             I also like sharing content related to the stuff that I have learned
             over the years in <strong>Web Development</strong> so it can help
             other people of the Dev Community. Feel free to Connect or Follow me
@@ -76,171 +37,92 @@
               rel="noreferrer"
               href="https://www.linkedin.com/in/rajkiranjaiswar/"
               target="_blank"
-              >Linkedin</a
-            >
+              class="text-link"
+            >LinkedIn</a>
             where I post useful content related to Web Development and
             Programming.
           </p>
-          <p
-            class="aboutContentDetailsPara"
-            data-aos="fade-up-left"
-            data-aos-delay="180"
-            data-aos-duration="1000"
-            data-aos-easing="ease forwards"
-            data-aos-offset="100"
-            data-aos-once="true"
-          >
+          <p class="about-para">
             I'm open to <strong>Job</strong> opportunities where I can
             contribute, learn and grow. If you have a good opportunity that
             matches my skills and experience then don't hesitate to
             <strong>contact</strong> me.
           </p>
-        </div>
-        <div
-          class="btn"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-duration="1000"
-          data-aos-easing="ease forwards"
-          data-aos-offset="100"
-          data-aos-once="true"
-        >
-          <button mat-raised-button (click)="redirectToContct()">
-            Contact
-          </button>
+          <div class="about-cta">
+            <button class="btn-primary" (click)="redirectToContct()">
+              <span>Get In Touch</span>
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="aboutContentSkills">
-        <h3
-          class="aboutContentTitle"
-          data-aos="fade-down-left"
-          data-aos-delay="160"
-          data-aos-duration="1000"
-          data-aos-easing="ease forwards"
-          data-aos-offset="100"
-          data-aos-once="true"
-        >
-          My Skills
-        </h3>
-        <div
-          class="skills"
-          data-aos="fade-up-left"
-          data-aos-delay="180"
-          data-aos-duration="1000"
-          data-aos-easing="ease forwards"
-          data-aos-offset="100"
-          data-aos-once="true"
-          >
-          <div class="skillsIcon">
-            <img
-            class="imgResponsive"
-            src="../../../assets/skills/angular.png"
-            id="angular"
-            />
+
+      <!-- Skills -->
+      <div class="about-skills" data-aos="fade-left" data-aos-delay="400" data-aos-once="true">
+        <h3 class="skills-title">My Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="200" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/angular.png" alt="Angular" loading="lazy" />
+            </div>
+            <span class="skill-name">Angular</span>
           </div>
-          <div class="skillsIcon">
-            <img 
-              class="imgResponsive" 
-              src="../../../assets/skills/node.png"
-              id="node"
-             />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="250" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/node.png" alt="Node.js" loading="lazy" />
+            </div>
+            <span class="skill-name">Node.js</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/mssql.png"
-              id="SQL"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="300" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/mssql.png" alt="MSSQL" loading="lazy" />
+            </div>
+            <span class="skill-name">MSSQL</span>
           </div>
-          <div class="skillsIcon">
-            <img
-            class="imgResponsive"
-            src="../../../assets/skills/js.png"
-            id="js"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="350" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/js.png" alt="JavaScript" loading="lazy" />
+            </div>
+            <span class="skill-name">JavaScript</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/TypeScript.png"
-              id="TypeScript"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="400" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/TypeScript.png" alt="TypeScript" loading="lazy" />
+            </div>
+            <span class="skill-name">TypeScript</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/html.png"
-              id="html"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="450" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/html.png" alt="HTML" loading="lazy" />
+            </div>
+            <span class="skill-name">HTML5</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/css.png"
-              id="css"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="500" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/css.png" alt="CSS" loading="lazy" />
+            </div>
+            <span class="skill-name">CSS3</span>
           </div>
-          
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/scss.webp"
-              id="scss"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="550" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/scss.webp" alt="SCSS" loading="lazy" />
+            </div>
+            <span class="skill-name">SCSS</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/bootstrap.png"
-              id="bootstrap"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="600" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/bootstrap.png" alt="Bootstrap" loading="lazy" />
+            </div>
+            <span class="skill-name">Bootstrap</span>
           </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/github.png"
-              id="github"
-            />
+          <div class="skill-item" data-aos="zoom-in" data-aos-delay="650" data-aos-once="true">
+            <div class="skill-icon-wrapper">
+              <img src="assets/skills/github.png" alt="GitHub" loading="lazy" />
+            </div>
+            <span class="skill-name">GitHub</span>
           </div>
-          
-          
-          <!-- <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/Postgresql.png"
-              id="postgres"
-            />
-          </div> -->
-          <!-- <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/grafana.png"
-              id="grafana"
-            />
-          </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/redis.png"
-              id="redis"
-            />
-          </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/docker.png"
-              id="docker"
-            />
-          </div>
-          <div class="skillsIcon">
-            <img
-              class="imgResponsive"
-              src="../../../assets/skills/outsystem.png"
-              id="outsystem"
-            />
-          </div> -->
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

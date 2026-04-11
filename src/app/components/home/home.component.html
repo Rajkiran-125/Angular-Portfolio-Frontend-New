@@ -1,57 +1,104 @@
-<div class="container">
-  <div class="homeContainer">
-    <div class="socialIcons" *ngIf="isMobile">
-      <div class="button linBtn">
-        <div class="icon" (click)="redirectToLinkdin()">
-          <i class="bx bxl-linkedin"></i>
-        </div>
-        <span>Linkedin</span>
-      </div>
-      <div class="button gitBtn">
-        <div class="icon">
-          <i class="bx bxl-github" (click)="redirectToGithub()"></i>
-        </div>
-        <span>Github</span>
-      </div>
-      <div class="button instaBtn">
-        <div class="icon">
-          <i class="bx bxl-instagram-alt" (click)="redirectToInsta()"></i>
-        </div>
-        <span>Instagram</span>
-      </div>
-    </div>
-    <div class="homeContent">
-      <h1
-        class="name"
-        data-aos="fade-right"
-        data-aos-delay="300"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-      >
-        Hey, I'm Rajkiran Jaiswar
+<section class="hero">
+  <!-- Animated background grid -->
+  <div class="hero-bg">
+    <div class="grid-pattern"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <div class="hero-container">
+    <!-- Left: Text Content -->
+    <div class="hero-content">
+      <p class="hero-greeting" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <span class="wave">&#128075;</span> Hello, I'm
+      </p>
+      <h1 class="hero-name" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+        Rajkiran<br/><span class="gradient-text">Jaiswar</span>
       </h1>
-      <div class="info">
-        <p>
-          I'm a passionate and skilled Softwear Engineer from Mumbai. 
-          I build things for the web. i'm always curious to learn more when it comes to new technologies and creative coding.
-          <br>
-          Angular | Node.js | SQL | JavaScript | Typescript | Web development | Problem Solving | Git | GitLab
-        </p>
+      <div class="hero-tagline" data-aos="fade-up" data-aos-delay="600" data-aos-once="true">
+        <span class="tagline-icon">&lt;/&gt;</span>
+        <span class="typewriter">Full-Stack Software Engineer</span>
       </div>
-      <div class="btn">
-        <button class="resume-btn" (click)="redirectToResume()"><span></span> Resume</button>
-        <button class="project-btn" (click)="redirectToProject()"><span></span> Projects</button>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="800" data-aos-once="true">
+        I build things for the web. Passionate and skilled Software Engineer from Mumbai,
+        always curious to learn more when it comes to new technologies and creative coding.
+      </p>
+
+      <div class="hero-tech-stack" data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
+        <span class="tech-badge">Angular</span>
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">SQL</span>
+      </div>
+
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
+        <button class="btn-primary" (click)="redirectToProject()">
+          <span>View Projects</span>
+          <i class="bx bx-right-arrow-alt"></i>
+        </button>
+        <button class="btn-outline" (click)="redirectToResume()">
+          <i class="bx bx-download"></i>
+          <span>Resume</span>
+        </button>
+      </div>
+
+      <!-- Social links -->
+      <div class="hero-socials" *ngIf="isMobile" data-aos="fade-up" data-aos-delay="1200" data-aos-once="true">
+        <a class="social-link" (click)="redirectToLinkdin()" title="LinkedIn">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a class="social-link" (click)="redirectToGithub()" title="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a class="social-link" (click)="redirectToInsta()" title="Instagram">
+          <i class="bx bxl-instagram-alt"></i>
+        </a>
       </div>
     </div>
-    <div class="email" *ngIf="isMobile">
-      <a href="mailto:rajjaiswar1256@gmail.com">rajjaiswar1256&#64;gmail.com</a>
-    </div>
-    <div class="scrollDown" (click)="redirectToAbout()">
-      <span></span>
-      <span></span>
-      <span></span>
+
+    <!-- Right: Photo + Decorations -->
+    <div class="hero-visual" data-aos="fade-left" data-aos-delay="600" data-aos-once="true">
+      <div class="photo-wrapper">
+        <div class="photo-border-glow"></div>
+        <div class="photo-container">
+          <img src="assets/img/new_bg2.jpg" alt="Rajkiran Jaiswar" />
+        </div>
+        <!-- Floating code card -->
+        <div class="floating-card card-1">
+          <div class="card-dot"></div>
+          <span class="card-text">Angular</span>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-dot dot-cyan"></div>
+          <span class="card-text">Node.js</span>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-dot dot-purple"></div>
+          <span class="card-text">TypeScript</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Side elements (desktop) -->
+  <div class="side-email" *ngIf="isMobile">
+    <a href="mailto:rajjaiswar1256@gmail.com">rajjaiswar1256&#64;gmail.com</a>
+    <div class="side-line"></div>
+  </div>
+
+  <div class="side-socials" *ngIf="isMobile">
+    <a (click)="redirectToLinkdin()"><i class="bx bxl-linkedin"></i></a>
+    <a (click)="redirectToGithub()"><i class="bx bxl-github"></i></a>
+    <a (click)="redirectToInsta()"><i class="bx bxl-instagram-alt"></i></a>
+    <div class="side-line"></div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" (click)="redirectToAbout()">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <span class="scroll-text">Scroll Down</span>
+  </div>
+</section>

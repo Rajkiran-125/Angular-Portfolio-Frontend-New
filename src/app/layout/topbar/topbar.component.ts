@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  HostListener,
   Output,
   Renderer2,
   ViewChild,
@@ -19,6 +20,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class TopbarComponent {
   isMenuOpen: boolean = false;
   isMobile: boolean = false;
+  isScrolled: boolean = false;
 
   @ViewChild('indicator') indicator!: ElementRef;
 
@@ -31,8 +33,13 @@ export class TopbarComponent {
     private renderer: Renderer2,
     private el: ElementRef,
     private router: Router,
-    private auth : AuthService
-  ) { }
+    private auth: AuthService
+  ) {}
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
 
   ngAfterViewInit() {
     this.subscription = this.observer
@@ -53,18 +60,18 @@ export class TopbarComponent {
       const activeLink = this.el.nativeElement.querySelector(
         `.navItems a[href='#${id}']`
       );
-      this.renderer.addClass(activeLink, 'active');
+      if (activeLink) {
+        this.renderer.addClass(activeLink, 'active');
+      }
     }
-
   };
 
   isLogin() {
     return localStorage.getItem('token');
   }
 
-  logout(){
+  logout() {
     this.auth.logout();
-    // this.router.navigate(['/login'])
   }
 
   ngOnDestroy() {

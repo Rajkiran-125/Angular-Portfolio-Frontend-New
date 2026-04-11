@@ -1,87 +1,62 @@
-<div class="container">
-  <div class="projectContainer">
-    <h2 class="heading">
-      <span class="headingMain" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">Projects</span>
-      <span class="headingSub" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        Here you will find some of the personal and clients projects on that i
-        worked with their source code and live link.
-      </span>
-    </h2>
-
-    <app-project-items Responsive>
-      <img src="../../../assets/projects/chatApp.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
-      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        Real-Time Chat App
-      </h3>
-      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        The Real-Time Chat Application is a modern messaging platform developed using Angular for the front-end and
-        Socket.IO for real-time communication. The application enables users to connect, interact, and exchange messages
-        in private chat rooms with a seamless user experience. It is built with scalability and responsiveness
-        in mind, ensuring smooth performance across devices.
+<section class="projects-section">
+  <div class="projects-container">
+    <!-- Section heading -->
+    <div class="section-heading" data-aos="fade-up" data-aos-once="true">
+      <span class="heading-label">Portfolio</span>
+      <h2 class="heading-title">Featured Projects</h2>
+      <p class="heading-subtitle">
+        Here you will find some of the personal and client projects that I
+        worked on, with source code and live links.
       </p>
-      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        <div class="toolsName" *ngFor="let tools of secoundProject">
-          {{ tools.name | uppercase }}
+    </div>
+
+    <div class="projects-grid">
+      <app-project-items Responsive>
+        <img src="assets/projects/chatApp.png" alt="Real-Time Chat App" class="projectsRowImg" loading="lazy" />
+        <h3 class="projectsRowContentTitle" data-aos="fade-up" data-aos-delay="120" data-aos-duration="500"
+          data-aos-once="true">
+          Real-Time Chat App
+        </h3>
+        <p class="projectsRowContentDesc" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500"
+          data-aos-once="true">
+          A modern messaging platform developed using Angular for the front-end and
+          Socket.IO for real-time communication. Enables users to connect, interact, and exchange messages
+          in private chat rooms with a seamless user experience.
+        </p>
+        <div class="tools" data-aos="fade-up" data-aos-delay="190" data-aos-duration="500"
+          data-aos-once="true">
+          <div class="toolsName" *ngFor="let tools of secoundProject">
+            {{ tools.name | uppercase }}
+          </div>
         </div>
-      </div>
-      <button mat-raised-button class="livBtn" (click)="projectTwo()">
-        Live Link
-      </button>
-    </app-project-items>
+        <button class="btn-outline project-link-btn" (click)="projectTwo()">
+          <i class="bx bx-link-external"></i>
+          <span>Live Link</span>
+        </button>
+      </app-project-items>
 
-    <app-project-items Responsive>
-      <img src="../../../assets/projects/pitch.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
-      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        UNFYD PITCH
-      </h3>
-      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        It is an Angular and node.js base project. Deveoped pitch module that sends Campaigns to targeted Audience
-        through various channels like whatsapp, Email, Sms and Voice.
-      </p>
-      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        <div class="toolsName" *ngFor="let tools of firstPoject">
-          {{ tools.name | uppercase }}
+      <app-project-items Responsive>
+        <img src="assets/projects/pitch.png" alt="UNFYD PITCH" class="projectsRowImg" loading="lazy" />
+        <h3 class="projectsRowContentTitle" data-aos="fade-up" data-aos-delay="120" data-aos-duration="500"
+          data-aos-once="true">
+          UNFYD PITCH
+        </h3>
+        <p class="projectsRowContentDesc" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500"
+          data-aos-once="true">
+          An Angular and Node.js based project. Developed pitch module that sends Campaigns to targeted Audience
+          through various channels like WhatsApp, Email, SMS and Voice.
+        </p>
+        <div class="tools" data-aos="fade-up" data-aos-delay="190" data-aos-duration="500"
+          data-aos-once="true">
+          <div class="toolsName" *ngFor="let tools of firstPoject">
+            {{ tools.name | uppercase }}
+          </div>
         </div>
-      </div>
-      <button mat-raised-button class="livBtn" (click)="projectOne()">
-        Live Link
-      </button>
-    </app-project-items>
-
-
-
-    <!-- <app-project-items Responsive>
-      <img src="../../../assets/projects/project.png" alt="Software Screenshot" class="projectsRowImg" loading="lazy" />
-      <h3 class="projectsRowContentTitle" data-aos="fade-down-left" data-aos-delay="120" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        Project Three
-      </h3>
-      <p class="projectsRowContentDesc" data-aos="fade-left" data-aos-delay="150" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
-        numquam possimus blanditiis odit nulla, odio eos non unde ipsum incidunt
-        quam accusantium consequuntur repudiandae recusandae eius magni ipsam
-        nisi deleniti!
-      </p>
-      <div class="tools" data-aos="zoom-in-left" data-aos-delay="190" data-aos-duration="500"
-        data-aos-easing="ease forwards" data-aos-offset="100" data-aos-once="true">
-        <div class="toolsName" *ngFor="let tools of thirdProject">
-          {{ tools.name | uppercase }}
-        </div>
-      </div>
-      <button mat-raised-button class="livBtn" (click)="projectThree()">
-        Live Link
-      </button>
-    </app-project-items> -->
-
-
+        <button class="btn-outline project-link-btn" (click)="projectOne()">
+          <i class="bx bx-link-external"></i>
+          <span>Live Link</span>
+        </button>
+      </app-project-items>
+    </div>
   </div>
-</div>
+</section>

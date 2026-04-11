@@ -1,55 +1,60 @@
 <app-loader *ngIf="loader"></app-loader>
-<div class="sidebarContainer">
-    <app-topbar (sidenavToggle)="drawer.toggle()" Responsive></app-topbar>
-    <mat-drawer-container class="drawerContainer" hasBackdrop="true">
-      <mat-drawer class="circularDrawer" #drawer mode="over" position="end">
-        <div class="drawerInfo">
-          <ul (click)="toggle()">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#dashboard">Dashboard</a></li>
-          </ul>
-        </div>
-      </mat-drawer>
-    </mat-drawer-container>
-    <div></div>
+
+<div class="dashboard-page">
+  <!-- Background -->
+  <div class="dashboard-bg">
+    <div class="grid-pattern"></div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-<div class="container">
-    <!-- <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Dashboard</span></h1> -->
-    <h1> <span class="yellow">Dashboard</span></h1>
-        <h2>Submit form details</h2>
-        <!-- {{contactList | json}} -->
-        <table class="container">
+
+  <!-- Back to home -->
+  <a href="/" class="back-link">
+    <i class="bx bx-arrow-back"></i>
+    <span>Back to Portfolio</span>
+  </a>
+
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1 class="dashboard-title">
+        <span class="gradient-text">Dashboard</span>
+      </h1>
+      <p class="dashboard-subtitle">Contact form submissions</p>
+    </div>
+
+    <div class="table-wrapper glass-card">
+      <div class="table-scroll">
+        <table>
           <thead>
             <tr>
-              <th><h1>Full Name</h1></th>
-              <th><h1>Contact</h1></th>
-              <th><h1>Email</h1></th>
-              <th><h1>Subject</h1></th>
-              <th><h1>message</h1></th>
-              <th><h1>Action</h1></th>
+              <th>Full Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Action</th>
             </tr>
           </thead>
-          <!-- {{contactList | json}} -->
           <tbody>
             <tr *ngFor="let contact of contactList">
-              <!-- {{contact}} -->
-                <td>{{contact.FullName}}</td>
-                <td>{{contact.ContactNumber}}</td>
-                <td>{{contact.Email}}</td>
-                <td>{{contact.Subject}}</td>
-                <td>{{contact.Message}}</td>
-                <td>
-                    <button (click)="deleteContact(contact.Id)"><i class="fa-solid fa-trash"></i></button>
-                </td>
+              <td>{{contact.FullName}}</td>
+              <td>{{contact.ContactNumber}}</td>
+              <td>{{contact.Email}}</td>
+              <td>{{contact.Subject}}</td>
+              <td class="message-cell">{{contact.Message}}</td>
+              <td>
+                <button class="delete-btn" (click)="deleteContact(contact.Id)">
+                  <i class="bx bx-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="!contactList || contactList.length === 0">
+              <td colspan="6" class="empty-state">
+                <i class="bx bx-inbox"></i>
+                <span>No submissions yet</span>
+              </td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
 </div>

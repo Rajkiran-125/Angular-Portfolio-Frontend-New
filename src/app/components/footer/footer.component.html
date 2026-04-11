@@ -1,53 +1,42 @@
-<div class="container">
-  <footer>
-    <div class="footerContainer">
-      <div class="row" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000" data-aos-easing="ease forwards"
-        data-aos-offset="100" data-aos-once="true">
-        <div>
-          <div class="social-icons">
-            <!-- <div class="button">
-              <div class="icon">
-                <a href=""
-                  ><i class="bx bxl-facebook" (click)="redirectToFB()"></i
-                ></a>
-              </div>
-            </div> -->
-            <div class="button">
-              <div class="icon">
-                <a><i class="bx bxl-linkedin" (click)="redirectToLinkdin()"></i></a>
-              </div>
-            </div>
-            <div class="button">
-              <div class="icon">
-                <a href=""><i class="bx bxl-github" (click)="redirectToGithub()"></i></a>
-              </div>
-            </div>
-            <div class="button">
-              <div class="icon">
-                <a href=""><i class="bx bxl-instagram-alt" (click)="redirectToInsta()"></i></a>
-              </div>
-            </div>
-            <!-- <div class="button">
-              <div class="icon">
-                <a
-                  ><i class="bx bxl-youtube" (click)="redirectToYoutube()"></i
-                ></a>
-              </div>
-            </div> -->
-          </div>
-          <mat-divider class="divider"></mat-divider>
-          <div class="page-scroll">
-            <a id="to-top" class="page-scroll" (click)="scrollToTopWithDelay(500)">
-              <img id="rocket" src="../../../assets/img/rocket.png" matTooltip="Lift me up, rocketty"
-                [matTooltipPosition]="tooltipPosition" [matTooltipShowDelay]="300" [matTooltipHideDelay]="300" />
-            </a>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="copyright">
-            <p>&COPY; 2024 Copyright rajkiranjaiswar.com All Rights Reserved.</p>
-          </div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Rajkiran Jaiswar</span>
+        <span class="logo-bracket"> /&gt;</span>
+      </div>
+
+      <!-- Social icons -->
+      <div class="footer-socials">
+        <a class="social-btn" (click)="redirectToLinkdin()" title="LinkedIn">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a class="social-btn" (click)="redirectToGithub()" title="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a class="social-btn" (click)="redirectToInsta()" title="Instagram">
+          <i class="bx bxl-instagram-alt"></i>
+        </a>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Back to top -->
+      <div class="back-to-top" (click)="scrollToTopWithDelay(100)">
+        <div class="top-btn">
+          <i class="bx bx-chevron-up"></i>
         </div>
+        <span class="top-text">Back to Top</span>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>Designed & Built by <span class="highlight">Rajkiran Jaiswar</span></p>
+        <p class="copyright-year">&copy; 2024 All Rights Reserved.</p>
       </div>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>

@@ -1,125 +1,60 @@
 .drawerContainer {
   margin: 0 auto;
-  overflow: none;
+  overflow: visible;
 }
 
 mat-drawer-content {
   display: flex;
   flex-direction: column;
-  background-color: var(--navy);
+  background-color: var(--bg-primary);
 }
 
-.circularDrawer {
+.mobileDrawer {
   position: fixed;
-  width: 100%;
-  clip-path: circle(400px at right 30px);
+  width: 75%;
+  max-width: 320px;
   height: 100vh;
-  background-color: var(--navy);
+  background: rgba(10, 14, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid var(--glass-border);
 
   .drawerInfo {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
+    padding: var(--space-xl);
 
     ul {
       display: flex;
       flex-direction: column;
-      margin-top: -10rem;
-      margin-left: 7rem;
-      color: var(--green);
-      font-size: 20px;
+      list-style: none;
+      gap: var(--space-xl);
 
       li {
-        margin: .5em;
-        list-style: none;
-
         a {
           font-family: var(--font-mono);
-          text-transform: uppercase;
-          font-size: 20px;
-          letter-spacing: 2px;
-          font-weight: 500;
+          font-size: var(--text-lg);
+          letter-spacing: 1px;
+          font-weight: 400;
           text-decoration: none;
-          border-radius: 10px 10px 0 0;
-          color: var(--green);
-          position: relative;
+          color: var(--text-secondary);
           transition: var(--transition);
-          transition-delay: 1s;
-          z-index: 1;
+          display: block;
+          padding: var(--space-sm) 0;
+
+          .nav-num {
+            color: var(--accent-cyan);
+            font-size: var(--text-sm);
+            margin-right: 6px;
+          }
 
           &:hover {
-            color: var(--white-gray);
-            text-decoration: line-through;
+            color: var(--accent-cyan);
+            transform: translateX(5px);
           }
         }
-
-      }
-    }
-  }
-}
-
-
-
-@media (300px <= width <= 400px) {
-  .circularDrawer {
-    clip-path: circle(400px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -25rem;
-        margin-left: 9rem;
-      }
-    }
-  }
-}
-
-@media (400px <= width <= 500px) {
-  .circularDrawer {
-    clip-path: circle(450px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -25rem;
-        margin-left: 7rem;
-      }
-    }
-  }
-}
-
-@media (500px <= width <= 600px) {
-  .circularDrawer {
-    clip-path: circle(550px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -25rem;
-        margin-left: 7rem;
-      }
-    }
-  }
-}
-@media (600px <= width <= 700px) {
-  .circularDrawer {
-    clip-path: circle(650px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -18rem;
-        margin-left: 7rem;
-      }
-    }
-  }
-}
-
-@media (700px <= width <= 800px) {
-  .circularDrawer {
-    clip-path: circle(750px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -12rem;
-        margin-left: 7rem;
       }
     }
   }

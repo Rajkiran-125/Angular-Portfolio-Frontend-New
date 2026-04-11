@@ -1,19 +1,20 @@
-<div class="container">
-  <div
-    class="resumeContainer"
-    (mouseover)="toggleHover()"
-    (mouseout)="toggleHover()"
-  >
-    <a href="../../../assets/resume/resume.pdf" target="_blank">
-      <span class="text" [style.display]="isHovered ? 'none' : 'inline-block'"
-        >View my full résumé.</span
-      >
-      <img
-        class="icon"
-        src="../../../assets/img/download.png"
-        alt="download resume"
-        [style.display]="isHovered ? 'inline-block' : 'none'"
-      />
+<section class="resume-section">
+  <div class="resume-container">
+    <a href="assets/resume/resume.pdf" target="_blank" class="resume-link"
+      (mouseover)="toggleHover()" (mouseout)="toggleHover()">
+      <div class="resume-content">
+        <div class="resume-icon">
+          <i class="bx bx-file" *ngIf="!isHovered"></i>
+          <i class="bx bx-download" *ngIf="isHovered"></i>
+        </div>
+        <span class="resume-text">
+          {{ isHovered ? 'Download Resume' : 'View my full Resume' }}
+        </span>
+        <div class="resume-arrow">
+          <i class="bx bx-right-arrow-alt"></i>
+        </div>
+      </div>
+      <div class="resume-glow"></div>
     </a>
   </div>
-</div>
+</section>

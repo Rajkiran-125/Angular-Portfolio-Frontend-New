@@ -1,166 +1,81 @@
-<div class="container">
-  <div class="contactContainer">
-    <h2 class="heading">
-      <span
-        class="headingMain"
-        data-aos="fade-up"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-        >Get In Touch</span
-      >
-      <span
-        class="headingSub"
-        data-aos="fade-up"
-        data-aos-delay="150"
-        data-aos-duration="1000"
-        data-aos-easing="ease forwards"
-        data-aos-offset="100"
-        data-aos-once="true"
-      >
-        Have a sweet project in mind or just want to say hi? Feel free to send
-        me a message by filling the form below and shoot the Send button!
-      </span>
-    </h2>
-    <div
-      class="contactFormContainer"
-      data-aos="fade-up"
-      data-aos-delay="250"
-      data-aos-duration="1000"
-      data-aos-easing="ease forwards"
-      data-aos-offset="100"
-      data-aos-once="true"
-    >
-      <form
-        class="contactForm"
-        [formGroup]="contactForm"
-      >
-        <mat-grid-list
-          cols="4"
-          rowHeight="80px"
-          gutterSize="5px"
-        >
-          <mat-grid-tile colspan="4">
-            <mat-form-field appearance="fill">
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- Section heading -->
+    <div class="section-heading" data-aos="fade-up" data-aos-once="true">
+      <span class="heading-label">Contact</span>
+      <h2 class="heading-title">Get In Touch</h2>
+      <p class="heading-subtitle">
+        Have a project in mind or just want to say hi? Feel free to send
+        me a message and I'll get back to you!
+      </p>
+    </div>
+
+    <div class="contact-form-wrapper glass-card"
+      data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+      <form class="contact-form" [formGroup]="contactForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <mat-form-field appearance="fill" class="dark-field">
               <mat-label>Full Name</mat-label>
-              <input
-                matInput
-                formControlName="name"
-                type="text"
-                placeholder="Enter Your Name"
-              />
+              <input matInput formControlName="name" type="text" placeholder="Enter Your Name" />
               <mat-error
-                *ngIf="
-                  contactForm.controls.name.touched &&
-                  contactForm.controls.name.invalid
-                "
-              >
-                <span *ngIf="contactForm.controls.name.errors.pattern"
-                  >This is invalid name,Please Check.</span
-                >
+                *ngIf="contactForm.controls.name.touched && contactForm.controls.name.invalid">
+                <span *ngIf="contactForm.controls.name.errors.pattern">Invalid name, please check.</span>
               </mat-error>
             </mat-form-field>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="4">
-            <mat-form-field appearance="fill">
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="fill" class="dark-field">
               <mat-label>Contact Number</mat-label>
-              <input
-                matInput
-                formControlName="contactNumber"
-                type="text"
-                placeholder="Enter Your Contact"
-              />
-              <mat-error
-                *ngIf="
-                  contactForm.controls.email.touched
-                "
-              >
-                <span *ngIf="contactForm.controls.email.errors.pattern"
-                  >Invalid Email, Please provide a valid Phone Number.</span
-                >
-              </mat-error>
+              <input matInput formControlName="contactNumber" type="text" placeholder="Enter Your Contact" />
             </mat-form-field>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="4">
-            <mat-form-field appearance="fill">
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="fill" class="dark-field">
               <mat-label>Email</mat-label>
-              <input
-                matInput
-                formControlName="email"
-                type="text"
-                placeholder="Enter Your Email"
-              />
+              <input matInput formControlName="email" type="text" placeholder="Enter Your Email" />
               <mat-error
-                *ngIf="
-                  contactForm.controls.email.touched &&
-                  contactForm.controls.email.invalid
-                "
-              >
-                <span *ngIf="contactForm.controls.email.errors.pattern"
-                  >Invalid Email, Please provide a valid email.</span
-                >
+                *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+                <span *ngIf="contactForm.controls.email.errors.pattern">Invalid email address.</span>
               </mat-error>
             </mat-form-field>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="4">
-            <mat-form-field appearance="fill">
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="fill" class="dark-field">
               <mat-label>Subject</mat-label>
-              <input
-                matInput
-                formControlName="subject"
-                type="text"
-                placeholder="Enter Your Subject."
-              />
+              <input matInput formControlName="subject" type="text" placeholder="Enter Your Subject" />
               <mat-error
-                *ngIf="
-                  contactForm.controls.subject.touched &&
-                  contactForm.controls.subject.invalid
-                "
-              >
-                <span *ngIf="contactForm.controls.subject.errors.minlength"
-                  >Subject length must be 10 .</span
-                >
+                *ngIf="contactForm.controls.subject.touched && contactForm.controls.subject.invalid">
+                <span *ngIf="contactForm.controls.subject.errors.minlength">Subject must be at least 10 characters.</span>
               </mat-error>
             </mat-form-field>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="4" rowspan="2">
-            <mat-form-field appearance="fill">
+          </div>
+
+          <div class="form-group full-width">
+            <mat-form-field appearance="fill" class="dark-field">
               <mat-label>Message</mat-label>
-              <textarea
-                matInput
-                formControlName="message"
-                id=""
-                cols="4"
-                rows="5"
-                placeholder="Write Your Message here ..."
-              ></textarea>
+              <textarea matInput formControlName="message" rows="5"
+                placeholder="Write your message here..."></textarea>
               <mat-error
-                *ngIf="
-                  contactForm.controls.message.touched &&
-                  contactForm.controls.message.invalid
-                "
-              >
-                <span *ngIf="contactForm.controls.message.errors.minlength"
-                  >Message should contains atleast 20 letters.</span
-                >
+                *ngIf="contactForm.controls.message.touched && contactForm.controls.message.invalid">
+                <span *ngIf="contactForm.controls.message.errors.minlength">Message should be at least 20 characters.</span>
               </mat-error>
             </mat-form-field>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="4">
-            <div class="btn">
-              <button
-                type="submit"
-                (click)='onSubmit(); saveContactDetails()'
-                [disabled]="!(contactForm.valid && contactForm.dirty)"
-              >
-                Send
-              </button>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
+          </div>
+
+          <div class="form-group full-width form-actions">
+            <button class="btn-primary send-btn" type="submit"
+              (click)="onSubmit(); saveContactDetails()"
+              [disabled]="!(contactForm.valid && contactForm.dirty)">
+              <span>Send Message</span>
+              <i class="bx bx-send"></i>
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
-</div>
+</section>

@@ -1,37 +1,28 @@
 <div class="container">
-  <!-- <div class="background-blur"></div> -->
-  <div class="headerContainer">
+  <div class="headerContainer" [class.scrolled]="isScrolled">
     <mat-toolbar class="header">
       <div class="headerLogo">
-        <!-- <div
-          class="home-img"
-          data-aos="flip-down"
-          data-aos-easing="ease-in"
-          data-aos-duration="1000"
-          data-aos-delay="300"
-        >
-          <div class="img-circle">
-            <span></span>
-            <span></span>
-            <div class="image">
-              <img src="../../../assets/img/logo.png" alt="" />
-            </div>
-          </div>
-        </div> -->
-        <p class="navTitle">Rajkiran Jaiswar</p>
+        <a href="#home" class="logo-link">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-name">RJ</span>
+          <span class="logo-bracket"> /&gt;</span>
+        </a>
       </div>
 
       <span class="spacer"></span>
+
       <div class="navItems" *ngIf="!isMobile">
-        <ul>
-          <li><a style="--i: 1" href="#home" (click)="setActive('home')">Home</a></li>
-          <li><a style="--i: 2" href="#about" (click)="setActive('about')">About</a></li>
-          <li><a style="--i: 3" href="#projects" (click)="setActive('projects')">Projects</a></li>
-          <li><a style="--i: 4" href="#contact" (click)="setActive('contact')">Contact</a></li>
-          <li *ngIf="isLogin()"><a style="--i: 5" routerLink="/dashboard" (click)="setActive('dashboard')">Dashboard</a></li>
-          <li *ngIf="!isLogin()"><a style="--i: 6" routerLink="/login" (click)="setActive('login')">Login</a></li>
-          <li *ngIf="isLogin()"><a style="--i: 7"  (click)="logout(); setActive('logout')">Logout</a></li>
-        </ul>
+        <nav>
+          <ul>
+            <li><a style="--i: 1" href="#home" (click)="setActive('home')"><span class="nav-number">01.</span> Home</a></li>
+            <li><a style="--i: 2" href="#about" (click)="setActive('about')"><span class="nav-number">02.</span> About</a></li>
+            <li><a style="--i: 3" href="#projects" (click)="setActive('projects')"><span class="nav-number">03.</span> Projects</a></li>
+            <li><a style="--i: 4" href="#contact" (click)="setActive('contact')"><span class="nav-number">04.</span> Contact</a></li>
+            <li *ngIf="isLogin()"><a style="--i: 5" routerLink="/dashboard" (click)="setActive('dashboard')">Dashboard</a></li>
+            <li *ngIf="!isLogin()"><a style="--i: 6" routerLink="/login" (click)="setActive('login')" class="nav-btn">Login</a></li>
+            <li *ngIf="isLogin()"><a style="--i: 7" (click)="logout(); setActive('logout')" class="nav-btn">Logout</a></li>
+          </ul>
+        </nav>
       </div>
 
       <div

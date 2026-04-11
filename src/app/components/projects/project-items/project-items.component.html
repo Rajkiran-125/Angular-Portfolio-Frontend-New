@@ -1,45 +1,22 @@
-<div class="container">
-  <div class="projectItemContainer">
-    <div class="projectsContent">
-      <div class="projectsRow">
-        <div
-          class="projectsRowImgCont"
-          data-aos="flip-up"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="500"
-          data-aos-delay="300"
-          data-aos-offset="100"
-          data-aos-once="true"
-        >
-          <ng-content select=".projectsRowImg"></ng-content>
-        </div>
-        <div class="projectsRowContent">
-          <ng-content select=".projectsRowContentTitle"></ng-content>
-          <ng-content select=".projectsRowContentDesc"></ng-content>
-          <p
-            class="toolTitle"
-            data-aos="zoom-in-right"
-            data-aos-delay="170"
-            data-aos-duration="500"
-            data-aos-easing="ease forwards"
-            data-aos-offset="100"
-            data-aos-once="true"
-          >
-            Tools
-          </p>
-          <ng-content select=".tools"></ng-content>
-          <div
-            class="btn"
-            data-aos="zoom-out"
-            data-aos-delay="300"
-            data-aos-duration="1000"
-            data-aos-easing="ease forwards"
-            data-aos-offset="100"
-            data-aos-once="true"
-          >
-            <ng-content class=".livBtn"></ng-content>
-          </div>
-        </div>
+<div class="project-card glass-card" data-aos="fade-up" data-aos-once="true">
+  <div class="project-layout">
+    <div class="project-image" data-aos="fade-right" data-aos-delay="200" data-aos-once="true">
+      <div class="image-wrapper">
+        <ng-content select=".projectsRowImg"></ng-content>
+        <div class="image-overlay"></div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span class="project-label">Featured Project</span>
+      <ng-content select=".projectsRowContentTitle"></ng-content>
+      <div class="project-desc-card">
+        <ng-content select=".projectsRowContentDesc"></ng-content>
+      </div>
+      <div class="project-tools">
+        <ng-content select=".tools"></ng-content>
+      </div>
+      <div class="project-links">
+        <ng-content></ng-content>
       </div>
     </div>
   </div>
