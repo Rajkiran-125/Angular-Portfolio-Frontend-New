@@ -3,15 +3,29 @@
   <mat-drawer-container class="drawerContainer" hasBackdrop="true">
     <mat-drawer class="mobileDrawer" #drawer mode="over" position="end">
       <div class="drawerInfo">
-        <ul (click)="toggle()">
-          <li><a href="#home"><span class="nav-num">01.</span> Home</a></li>
-          <li><a href="#about"><span class="nav-num">02.</span> About</a></li>
-          <li><a href="#projects"><span class="nav-num">03.</span> Projects</a></li>
-          <li><a href="#contact"><span class="nav-num">04.</span> Contact</a></li>
-          <li *ngIf="isLogin()"><a routerLink="/dashboard">Dashboard</a></li>
-          <li *ngIf="!isLogin()"><a routerLink="/login">Login</a></li>
-          <li *ngIf="isLogin()"><a routerLink="/login" (click)="logout();">Logout</a></li>
-        </ul>
+        <nav class="fullscreen-nav">
+          <ul (click)="toggle()">
+            <li>
+              <span class="nav-num">01</span>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <span class="nav-num">02</span>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <span class="nav-num">03</span>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <span class="nav-num">04</span>
+              <a href="#contact">Contact</a>
+            </li>
+            <li *ngIf="isLogin()"><span class="nav-num">05</span><a routerLink="/dashboard">Dashboard</a></li>
+            <li *ngIf="!isLogin()"><span class="nav-num">05</span><a routerLink="/login">Login</a></li>
+            <li *ngIf="isLogin()"><span class="nav-num">06</span><a routerLink="/login" (click)="logout();">Logout</a></li>
+          </ul>
+        </nav>
       </div>
     </mat-drawer>
     <mat-drawer-content>

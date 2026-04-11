@@ -1,52 +1,37 @@
 <section class="hero">
-  <!-- Animated background -->
-  <div class="hero-bg">
-    <div class="grid-pattern"></div>
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-    <div class="gradient-orb orb-3"></div>
-
-    <!-- Floating particles -->
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
-    <div class="particle p4"></div>
-    <div class="particle p5"></div>
-    <div class="particle p6"></div>
-    <div class="particle p7"></div>
-    <div class="particle p8"></div>
-
-    <!-- Pulsing glow rings -->
-    <div class="glow-ring ring-1"></div>
-    <div class="glow-ring ring-2"></div>
-  </div>
-
   <div class="hero-container">
-    <!-- Left: Text Content -->
-    <div class="hero-content">
-      <p class="hero-greeting" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
-        <span class="wave">&#128075;</span> Hello, I'm
-      </p>
-      <h1 class="hero-name" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
-        Rajkiran<br/><span class="gradient-text">Jaiswar</span>
+    <!-- Top meta row -->
+    <div class="hero-meta" data-aos="fade-down" data-aos-delay="200" data-aos-once="true" data-aos-offset="0">
+      <span class="meta-left">Full-Stack Software Engineer</span>
+      <span class="meta-center"><strong>3+</strong> Years of Experience</span>
+      <span class="meta-right">Mumbai, India</span>
+    </div>
+
+    <!-- Main display typography -->
+    <div class="hero-display">
+      <h1 class="display-line line-1" data-aos="fade-up" data-aos-delay="400" data-aos-once="true" data-aos-offset="0">
+        <span class="display-word">BUILT</span>
+        <span class="display-word serif-italic">in</span>
+        <span class="display-word highlight-code">CODE</span>
       </h1>
-      <div class="hero-tagline" data-aos="fade-up" data-aos-delay="600" data-aos-once="true">
-        <span class="tagline-icon">&lt;/&gt;</span>
-        <span class="typewriter">Full-Stack Software Engineer</span>
-      </div>
-      <p class="hero-description" data-aos="fade-up" data-aos-delay="800" data-aos-once="true">
-        I build things for the web. Passionate and skilled Software Engineer from Mumbai,
-        always curious to learn more when it comes to new technologies and creative coding.
-      </p>
+      <h1 class="display-line line-2" data-aos="fade-up" data-aos-delay="600" data-aos-once="true" data-aos-offset="0">
+        <span class="display-word">DESIGNED</span>
+        <span class="display-word serif-italic">for</span>
+        <span class="display-word">HUMANS</span>
+      </h1>
+      <div class="display-underline" data-aos="fade-right" data-aos-delay="800" data-aos-once="true" data-aos-offset="0"></div>
+    </div>
 
-      <div class="hero-tech-stack" data-aos="fade-up" data-aos-delay="900" data-aos-once="true">
-        <span class="tech-badge">Angular</span>
-        <span class="tech-badge">Node.js</span>
-        <span class="tech-badge">TypeScript</span>
-        <span class="tech-badge">SQL</span>
+    <!-- Description row -->
+    <div class="hero-bottom">
+      <div class="hero-description" data-aos="fade-up" data-aos-delay="900" data-aos-once="true" data-aos-offset="0">
+        <p>
+          I build things for the web. Passionate and skilled Software Engineer,
+          always curious to learn more when it comes to new technologies and creative coding.
+        </p>
       </div>
 
-      <div class="hero-actions" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true" data-aos-offset="0">
         <button class="btn-primary" (click)="redirectToProject()">
           <span>View Projects</span>
           <i class="bx bx-right-arrow-alt"></i>
@@ -56,41 +41,12 @@
           <span>Resume</span>
         </button>
       </div>
-
-      <!-- Social links -->
-      <div class="hero-socials" *ngIf="isMobile" data-aos="fade-up" data-aos-delay="1200" data-aos-once="true">
-        <a class="social-link" (click)="redirectToLinkdin()" title="LinkedIn">
-          <i class="bx bxl-linkedin"></i>
-        </a>
-        <a class="social-link" (click)="redirectToGithub()" title="GitHub">
-          <i class="bx bxl-github"></i>
-        </a>
-        <a class="social-link" (click)="redirectToInsta()" title="Instagram">
-          <i class="bx bxl-instagram-alt"></i>
-        </a>
-      </div>
     </div>
 
-    <!-- Right: Photo + Decorations (desktop only) -->
-    <div class="hero-visual" *ngIf="isMobile" data-aos="fade-left" data-aos-delay="600" data-aos-once="true">
-      <div class="photo-wrapper">
-        <div class="photo-border-glow"></div>
-        <div class="photo-container">
-          <img src="assets/img/new_bg2.jpg" alt="Rajkiran Jaiswar" />
-        </div>
-        <!-- Floating code card -->
-        <div class="floating-card card-1">
-          <div class="card-dot"></div>
-          <span class="card-text">Angular</span>
-        </div>
-        <div class="floating-card card-2">
-          <div class="card-dot dot-cyan"></div>
-          <span class="card-text">Node.js</span>
-        </div>
-        <div class="floating-card card-3">
-          <div class="card-dot dot-purple"></div>
-          <span class="card-text">TypeScript</span>
-        </div>
+    <!-- Photo (desktop only) -->
+    <div class="hero-photo" *ngIf="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-once="true" data-aos-offset="0">
+      <div class="photo-frame">
+        <img src="assets/img/new_bg2.jpg" alt="Rajkiran Jaiswar" />
       </div>
     </div>
   </div>
@@ -102,9 +58,9 @@
   </div>
 
   <div class="side-socials" *ngIf="isMobile">
-    <a (click)="redirectToLinkdin()"><i class="bx bxl-linkedin"></i></a>
-    <a (click)="redirectToGithub()"><i class="bx bxl-github"></i></a>
-    <a (click)="redirectToInsta()"><i class="bx bxl-instagram-alt"></i></a>
+    <a (click)="redirectToLinkdin()" class="cursor-hover-target"><i class="bx bxl-linkedin"></i></a>
+    <a (click)="redirectToGithub()" class="cursor-hover-target"><i class="bx bxl-github"></i></a>
+    <a (click)="redirectToInsta()" class="cursor-hover-target"><i class="bx bxl-instagram-alt"></i></a>
     <div class="side-line"></div>
   </div>
 
@@ -113,6 +69,19 @@
     <div class="mouse">
       <div class="wheel"></div>
     </div>
-    <span class="scroll-text">Scroll Down</span>
+    <span class="scroll-text">Scroll</span>
+  </div>
+
+  <!-- Social links (mobile) -->
+  <div class="mobile-socials" *ngIf="!isMobile" data-aos="fade-up" data-aos-delay="1200" data-aos-once="true" data-aos-offset="0">
+    <a class="social-link cursor-hover-target" (click)="redirectToLinkdin()" title="LinkedIn">
+      <i class="bx bxl-linkedin"></i>
+    </a>
+    <a class="social-link cursor-hover-target" (click)="redirectToGithub()" title="GitHub">
+      <i class="bx bxl-github"></i>
+    </a>
+    <a class="social-link cursor-hover-target" (click)="redirectToInsta()" title="Instagram">
+      <i class="bx bxl-instagram-alt"></i>
+    </a>
   </div>
 </section>

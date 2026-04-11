@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -32,6 +32,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Grid Lines Background -->
+    <div class="grid-lines-bg">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
     <app-root></app-root>
+
+    <!-- Custom Cursor Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.getElementById('customCursor');
+        const dot = document.getElementById('cursorDot');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = mouseX + 'px';
+          dot.style.top = mouseY + 'px';
+        });
+
+        function animateCursor() {
+          cursorX += (mouseX - cursorX) * 0.15;
+          cursorY += (mouseY - cursorY) * 0.15;
+          cursor.style.left = cursorX + 'px';
+          cursor.style.top = cursorY + 'px';
+          requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.querySelectorAll('a, button, [role="button"], input, textarea, .cursor-hover-target').forEach(function(el) {
+          el.addEventListener('mouseenter', function() { cursor.classList.add('cursor-hover'); });
+          el.addEventListener('mouseleave', function() { cursor.classList.remove('cursor-hover'); });
+        });
+
+        // Re-observe for dynamically added elements
+        var observer = new MutationObserver(function() {
+          document.querySelectorAll('a, button, [role="button"], input, textarea, .cursor-hover-target').forEach(function(el) {
+            if (!el.dataset.cursorBound) {
+              el.dataset.cursorBound = 'true';
+              el.addEventListener('mouseenter', function() { cursor.classList.add('cursor-hover'); });
+              el.addEventListener('mouseleave', function() { cursor.classList.remove('cursor-hover'); });
+            }
+          });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
   </body>
 </html>

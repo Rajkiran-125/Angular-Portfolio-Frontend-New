@@ -2,8 +2,7 @@
   display: block;
 
   .contact-section {
-    background: var(--bg-secondary);
-    animation: contact-bg-shift 13s ease-in-out infinite;
+    background: var(--bg-primary);
     padding: var(--space-4xl) var(--space-lg);
     position: relative;
 
@@ -11,11 +10,10 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 10%;
-      right: 10%;
+      left: 0;
+      right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-primary), transparent);
-      opacity: 0.3;
+      background: var(--glass-border);
     }
 
     .contact-container {
@@ -23,8 +21,34 @@
       margin: 0 auto;
     }
 
+    .contact-heading {
+      margin-bottom: var(--space-3xl);
+
+      .display-title {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 400;
+        color: var(--text-primary);
+        line-height: 0.9;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        margin-bottom: var(--space-xl);
+      }
+
+      .contact-subtitle {
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-weight: 300;
+        max-width: 500px;
+      }
+    }
+
     .contact-form-wrapper {
       padding: var(--space-2xl);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
 
       .contact-form {
         .form-grid {
@@ -42,7 +66,7 @@
 
               ::ng-deep {
                 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-                  background-color: var(--bg-elevated) !important;
+                  background-color: rgba(255, 255, 255, 0.03) !important;
                   border-radius: var(--radius-md) var(--radius-md) 0 0;
                 }
 
@@ -60,23 +84,23 @@
                 }
 
                 .mat-mdc-form-field-focus-overlay {
-                  background-color: rgba(99, 102, 241, 0.05) !important;
+                  background-color: rgba(74, 123, 247, 0.03) !important;
                 }
               }
             }
 
             &.form-actions {
               display: flex;
-              justify-content: center;
+              justify-content: flex-start;
               margin-top: var(--space-md);
 
               .send-btn {
                 min-width: 200px;
                 padding: 16px 40px;
-                font-size: var(--text-base);
+                font-size: var(--text-sm);
 
                 &:disabled {
-                  opacity: 0.5;
+                  opacity: 0.3;
                   cursor: not-allowed;
                   transform: none;
                   box-shadow: none;
@@ -104,11 +128,4 @@
       }
     }
   }
-}
-
-@keyframes contact-bg-shift {
-  0%, 100% { background-color: #0f1629; }
-  25%      { background-color: #131a2f; }
-  50%      { background-color: #18102e; }
-  75%      { background-color: #101d2c; }
 }

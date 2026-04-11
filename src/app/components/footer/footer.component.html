@@ -1,42 +1,49 @@
 <footer class="footer">
+  <!-- Marquee strip -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span class="marquee-item">LET'S WORK <span class="marquee-star">*</span></span>
+      <span class="marquee-item">TOGETHER <span class="marquee-star">*</span></span>
+      <span class="marquee-item">BUILD <span class="marquee-star">*</span></span>
+      <span class="marquee-item">SOMETHING <span class="marquee-star">*</span></span>
+      <span class="marquee-item">GREAT <span class="marquee-star">*</span></span>
+      <span class="marquee-item">LET'S WORK <span class="marquee-star">*</span></span>
+      <span class="marquee-item">TOGETHER <span class="marquee-star">*</span></span>
+      <span class="marquee-item">BUILD <span class="marquee-star">*</span></span>
+      <span class="marquee-item">SOMETHING <span class="marquee-star">*</span></span>
+      <span class="marquee-item">GREAT <span class="marquee-star">*</span></span>
+    </div>
+  </div>
+
   <div class="footer-container">
-    <div class="footer-content" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
-      <!-- Logo -->
-      <div class="footer-logo">
-        <span class="logo-bracket">&lt;</span>
-        <span class="logo-name">Rajkiran Jaiswar</span>
-        <span class="logo-bracket"> /&gt;</span>
+    <!-- Link columns -->
+    <div class="footer-links" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+      <div class="link-col">
+        <a href="mailto:rajjaiswar1256@gmail.com" class="footer-email">rajjaiswar1256&#64;gmail.com</a>
+        <span class="footer-location">Mumbai, India</span>
       </div>
-
-      <!-- Social icons -->
-      <div class="footer-socials">
-        <a class="social-btn" (click)="redirectToLinkdin()" title="LinkedIn">
-          <i class="bx bxl-linkedin"></i>
-        </a>
-        <a class="social-btn" (click)="redirectToGithub()" title="GitHub">
-          <i class="bx bxl-github"></i>
-        </a>
-        <a class="social-btn" (click)="redirectToInsta()" title="Instagram">
-          <i class="bx bxl-instagram-alt"></i>
-        </a>
+      <div class="link-col">
+        <a href="#home" class="footer-nav-link">Home</a>
+        <a href="#contact" class="footer-nav-link">Contact</a>
+        <a href="#projects" class="footer-nav-link">Projects</a>
+        <a href="#about" class="footer-nav-link">About</a>
       </div>
-
-      <!-- Divider -->
-      <div class="footer-divider"></div>
-
-      <!-- Back to top -->
-      <div class="back-to-top" (click)="scrollToTopWithDelay(100)">
-        <div class="top-btn">
-          <i class="bx bx-chevron-up"></i>
-        </div>
-        <span class="top-text">Back to Top</span>
+      <div class="link-col">
+        <a class="footer-nav-link cursor-hover-target" (click)="redirectToLinkdin()">LinkedIn</a>
+        <a class="footer-nav-link cursor-hover-target" (click)="redirectToGithub()">GitHub</a>
+        <a class="footer-nav-link cursor-hover-target" (click)="redirectToInsta()">Instagram</a>
       </div>
-
-      <!-- Copyright -->
-      <div class="footer-copyright">
-        <p>Designed & Built by <span class="highlight">Rajkiran Jaiswar</span></p>
-        <p class="copyright-year">&copy; 2024 All Rights Reserved.</p>
+      <div class="link-col link-col-right">
+        <span class="footer-copyright-text">&copy;2024 All Rights Reserved.</span>
       </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Massive name -->
+    <div class="footer-name" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+      <h2 class="name-display cursor-hover-target" (click)="scrollToTopWithDelay(100)">RAJKIRAN</h2>
     </div>
   </div>
 </footer>

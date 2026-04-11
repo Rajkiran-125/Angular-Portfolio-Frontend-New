@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
+  activePreview: string | null = null;
   firstPoject: Tools[] = [
     {
       name: 'Angular',

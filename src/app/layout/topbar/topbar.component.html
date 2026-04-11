@@ -3,9 +3,7 @@
     <mat-toolbar class="header">
       <div class="headerLogo">
         <a href="#home" class="logo-link">
-          <span class="logo-bracket">&lt;</span>
-          <span class="logo-name">RJ</span>
-          <span class="logo-bracket"> /&gt;</span>
+          <span class="logo-text">RJ</span>
         </a>
       </div>
 
@@ -14,26 +12,25 @@
       <div class="navItems" *ngIf="!isMobile">
         <nav>
           <ul>
-            <li><a style="--i: 1" href="#home" (click)="setActive('home')"><span class="nav-number">01.</span> Home</a></li>
-            <li><a style="--i: 2" href="#about" (click)="setActive('about')"><span class="nav-number">02.</span> About</a></li>
-            <li><a style="--i: 3" href="#projects" (click)="setActive('projects')"><span class="nav-number">03.</span> Projects</a></li>
-            <li><a style="--i: 4" href="#contact" (click)="setActive('contact')"><span class="nav-number">04.</span> Contact</a></li>
-            <li *ngIf="isLogin()"><a style="--i: 5" routerLink="/dashboard" (click)="setActive('dashboard')">Dashboard</a></li>
-            <li *ngIf="!isLogin()"><a style="--i: 6" routerLink="/login" (click)="setActive('login')" class="nav-btn">Login</a></li>
-            <li *ngIf="isLogin()"><a style="--i: 7" (click)="logout(); setActive('logout')" class="nav-btn">Logout</a></li>
+            <li><a href="#home" (click)="setActive('home')">Home</a></li>
+            <li><a href="#about" (click)="setActive('about')">About</a></li>
+            <li><a href="#projects" (click)="setActive('projects')">Projects</a></li>
+            <li><a href="#contact" (click)="setActive('contact')">Contact</a></li>
+            <li *ngIf="isLogin()"><a routerLink="/dashboard" (click)="setActive('dashboard')">Dashboard</a></li>
+            <li *ngIf="!isLogin()"><a routerLink="/login" (click)="setActive('login')" class="nav-btn">Login</a></li>
+            <li *ngIf="isLogin()"><a (click)="logout(); setActive('logout')" class="nav-btn">Logout</a></li>
           </ul>
         </nav>
       </div>
 
+      <!-- MENU button for mobile -->
       <div
-        id="humMenu"
+        class="menu-toggle cursor-hover-target"
         (click)="toggleSidenav()"
-        [class.openMenu]="isMenuOpen"
         *ngIf="isMobile"
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="menu-label">{{ isMenuOpen ? 'CLOSE' : 'MENU' }}</span>
+        <div class="menu-dot" [class.active]="isMenuOpen"></div>
       </div>
     </mat-toolbar>
   </div>

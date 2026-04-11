@@ -2,61 +2,20 @@
   display: block;
 
   .about-section {
-    background: var(--bg-secondary);
-    animation: about-bg-shift 15s ease-in-out infinite;
+    background: var(--bg-primary);
     padding: var(--space-4xl) var(--space-lg);
     position: relative;
     overflow: hidden;
 
-    // Floating code background
-    .code-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-
-      .code-line {
-        position: absolute;
-        font-family: var(--font-mono);
-        font-size: var(--text-sm);
-        white-space: nowrap;
-        opacity: 0;
-        animation: code-float 14s linear infinite;
-
-        .code-keyword { color: rgba(99, 102, 241, 0.35); }
-        .code-string { color: rgba(16, 185, 129, 0.35); }
-        .code-func { color: rgba(34, 211, 238, 0.35); }
-        .code-comment { color: rgba(100, 116, 139, 0.3); font-style: italic; }
-        .code-number { color: rgba(245, 158, 11, 0.35); }
-        .code-param { color: rgba(244, 63, 94, 0.35); }
-        color: rgba(148, 163, 184, 0.15);
-
-        &.cl-1  { left: 5%;  top: 8%;   animation-delay: 0s;    animation-duration: 12s; }
-        &.cl-2  { right: 8%; top: 15%;  animation-delay: 1.5s;  animation-duration: 14s; }
-        &.cl-3  { right: 5%; top: 22%;  animation-delay: 2s;    animation-duration: 14s; }
-        &.cl-4  { right: 12%;top: 29%;  animation-delay: 2.3s;  animation-duration: 14s; }
-        &.cl-5  { left: 3%;  top: 40%;  animation-delay: 3s;    animation-duration: 16s; }
-        &.cl-6  { left: 10%; top: 55%;  animation-delay: 4s;    animation-duration: 13s; }
-        &.cl-7  { right: 6%; top: 50%;  animation-delay: 5s;    animation-duration: 15s; }
-        &.cl-8  { right: 3%; top: 57%;  animation-delay: 5.5s;  animation-duration: 15s; }
-        &.cl-9  { right: 10%;top: 64%;  animation-delay: 5.8s;  animation-duration: 15s; }
-        &.cl-10 { left: 6%;  top: 75%;  animation-delay: 7s;    animation-duration: 12s; }
-        &.cl-11 { left: 2%;  top: 85%;  animation-delay: 8s;    animation-duration: 14s; }
-        &.cl-12 { right: 4%; top: 90%;  animation-delay: 9s;    animation-duration: 13s; }
-      }
-    }
-
-    // Subtle top divider gradient
+    // Top divider
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 10%;
-      right: 10%;
+      left: 0;
+      right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-cyan), transparent);
-      opacity: 0.3;
+      background: var(--glass-border);
     }
 
     .about-container {
@@ -66,17 +25,101 @@
       z-index: 1;
     }
 
+    // Large display heading
+    .about-heading {
+      margin-bottom: var(--space-3xl);
+
+      .display-title {
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 8vw, 7rem);
+        font-weight: 400;
+        color: var(--text-primary);
+        line-height: 0.9;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+      }
+    }
+
+    // Philosophy text
+    .about-philosophy {
+      max-width: 600px;
+      margin-bottom: var(--space-4xl);
+
+      .philosophy-text {
+        font-family: var(--font-serif);
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+
+    // Numbered principles
+    .about-principles {
+      margin-bottom: var(--space-5xl);
+
+      .principle-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-xl);
+        padding: var(--space-xl) 0;
+        border-top: 1px solid var(--glass-border);
+        transition: var(--transition);
+
+        &:last-child {
+          border-bottom: 1px solid var(--glass-border);
+        }
+
+        &:hover {
+          padding-left: var(--space-md);
+        }
+
+        .principle-num {
+          font-family: var(--font-sans);
+          font-size: var(--text-xs);
+          color: var(--text-muted);
+          letter-spacing: 1px;
+          min-width: 30px;
+          padding-top: 4px;
+        }
+
+        .principle-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+
+          .principle-title {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+          }
+
+          .principle-subtitle {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    // About grid
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--space-3xl);
     }
 
-    // About text card
+    // About text
     .about-text {
       .about-card {
-        padding: var(--space-2xl);
-
         .about-para {
           font-size: var(--text-base);
           color: var(--text-secondary);
@@ -89,13 +132,13 @@
           }
 
           .text-link {
-            color: var(--accent-cyan);
+            color: var(--accent-primary);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: var(--transition);
 
             &:hover {
-              border-bottom-color: var(--accent-cyan);
+              border-bottom-color: var(--accent-primary);
             }
           }
         }
@@ -110,17 +153,18 @@
     .about-skills {
       .skills-title {
         font-family: var(--font-display);
-        font-size: var(--text-2xl);
-        font-weight: 600;
+        font-size: var(--text-3xl);
+        font-weight: 400;
         color: var(--text-heading);
         margin-bottom: var(--space-2xl);
-        text-align: center;
+        letter-spacing: 3px;
+        text-transform: uppercase;
       }
 
       .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: var(--space-lg);
+        gap: var(--space-md);
 
         .skill-item {
           display: flex;
@@ -128,15 +172,15 @@
           align-items: center;
           gap: var(--space-sm);
           padding: var(--space-lg);
-          background: var(--glass-bg);
+          background: rgba(255, 255, 255, 0.02);
           border: 1px solid var(--glass-border);
-          border-radius: var(--radius-lg);
+          border-radius: var(--radius-md);
           transition: var(--transition);
-          cursor: default;
+          cursor: none;
 
           .skill-icon-wrapper {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -145,24 +189,24 @@
               max-width: 100%;
               max-height: 100%;
               object-fit: contain;
-              filter: grayscale(100%) brightness(0.8);
+              filter: grayscale(100%) brightness(0.7);
               transition: var(--transition);
             }
           }
 
           .skill-name {
-            font-family: var(--font-mono);
+            font-family: var(--font-sans);
             font-size: var(--text-xs);
             color: var(--text-muted);
             text-align: center;
             transition: var(--transition);
+            letter-spacing: 0.5px;
           }
 
           &:hover {
-            background: var(--glass-bg-hover);
-            border-color: var(--accent-primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow-primary);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-primary);
+            transform: translateY(-3px);
 
             .skill-icon-wrapper img {
               filter: grayscale(0%) brightness(1);
@@ -183,6 +227,11 @@
   .about-section {
     padding: var(--space-5xl) var(--space-3xl);
 
+    .about-principles {
+      max-width: 700px;
+      margin-left: auto;
+    }
+
     .about-grid {
       grid-template-columns: 1.2fr 1fr;
       gap: var(--space-4xl);
@@ -190,37 +239,9 @@
     }
 
     .about-skills {
-      .skills-title {
-        text-align: left;
-      }
-
       .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       }
     }
-  }
-}
-
-@keyframes about-bg-shift {
-  0%, 100% { background-color: #0f1629; }
-  25%      { background-color: #111a30; }
-  50%      { background-color: #160f2e; }
-  75%      { background-color: #0f1a2d; }
-}
-
-@keyframes code-float {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  10% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-30px);
   }
 }

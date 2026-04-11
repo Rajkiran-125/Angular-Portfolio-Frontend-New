@@ -3,11 +3,14 @@
 
   .project-card {
     padding: var(--space-xl);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     transition: var(--transition);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
 
     &:hover {
-      transform: translateY(-4px);
+      border-color: var(--glass-border-hover);
+      transform: translateY(-3px);
 
       .image-wrapper {
         .image-overlay {
@@ -24,22 +27,22 @@
       .project-image {
         .image-wrapper {
           position: relative;
-          border-radius: var(--radius-lg);
+          border-radius: var(--radius-md);
           overflow: hidden;
 
           ::ng-deep .projectsRowImg {
             width: 100%;
             display: block;
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
             transition: var(--transition-slow);
           }
 
           .image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.1));
+            background: rgba(17, 17, 17, 0.3);
             transition: var(--transition);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
           }
         }
       }
@@ -50,10 +53,10 @@
         justify-content: center;
 
         .project-label {
-          font-family: var(--font-mono);
+          font-family: var(--font-sans);
           font-size: var(--text-xs);
-          color: var(--accent-cyan);
-          letter-spacing: 1px;
+          color: var(--text-muted);
+          letter-spacing: 2px;
           text-transform: uppercase;
           margin-bottom: var(--space-sm);
         }

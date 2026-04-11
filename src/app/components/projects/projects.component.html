@@ -1,62 +1,60 @@
 <section class="projects-section">
   <div class="projects-container">
-    <!-- Section heading -->
-    <div class="section-heading" data-aos="fade-up" data-aos-once="true">
-      <span class="heading-label">Portfolio</span>
-      <h2 class="heading-title">Featured Projects</h2>
-      <p class="heading-subtitle">
-        Here you will find some of the personal and client projects that I
-        worked on, with source code and live links.
-      </p>
+    <!-- Large display heading -->
+    <div class="projects-heading" data-aos="fade-up" data-aos-once="true">
+      <div class="heading-meta">
+        <span class="meta-left">Crafted Projects</span>
+        <span class="meta-right">Real Results</span>
+      </div>
+      <h2 class="display-line" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <span class="display-word">WANT</span>
+        <span class="display-word serif-italic">to</span>
+        <span class="display-word">SEE</span>
+      </h2>
+      <h2 class="display-line line-2" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+        <span class="display-word">WHAT I'VE</span>
+        <span class="display-word">BUILT?</span>
+      </h2>
+      <div class="display-underline" data-aos="fade-right" data-aos-delay="600" data-aos-once="true"></div>
     </div>
 
-    <div class="projects-grid">
-      <app-project-items Responsive>
-        <img src="assets/projects/chatApp.png" alt="Real-Time Chat App" class="projectsRowImg" loading="lazy" />
-        <h3 class="projectsRowContentTitle" data-aos="fade-up" data-aos-delay="120" data-aos-duration="500"
-          data-aos-once="true">
-          Real-Time Chat App
-        </h3>
-        <p class="projectsRowContentDesc" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500"
-          data-aos-once="true">
-          A modern messaging platform developed using Angular for the front-end and
-          Socket.IO for real-time communication. Enables users to connect, interact, and exchange messages
-          in private chat rooms with a seamless user experience.
-        </p>
-        <div class="tools" data-aos="fade-up" data-aos-delay="190" data-aos-duration="500"
-          data-aos-once="true">
-          <div class="toolsName" *ngFor="let tools of secoundProject">
-            {{ tools.name | uppercase }}
+    <!-- Project list -->
+    <div class="projects-list">
+      <div class="project-row cursor-hover-target" (click)="projectTwo()"
+        (mouseenter)="activePreview = 'chatApp'" (mouseleave)="activePreview = null"
+        data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <div class="project-name">Real-Time Chat App</div>
+        <button class="btn-outline project-view-btn" (click)="projectTwo(); $event.stopPropagation()">
+          <span>View Project</span>
+        </button>
+        <div class="project-hover-info">
+          <p class="hover-desc">A modern messaging platform built with Angular &amp; Socket.IO for real-time communication in private chat rooms.</p>
+          <div class="hover-tools">
+            <span *ngFor="let tool of secoundProject">{{ tool.name }}</span>
           </div>
         </div>
-        <button class="btn-outline project-link-btn" (click)="projectTwo()">
-          <i class="bx bx-link-external"></i>
-          <span>Live Link</span>
-        </button>
-      </app-project-items>
+      </div>
 
-      <app-project-items Responsive>
-        <img src="assets/projects/pitch.png" alt="UNFYD PITCH" class="projectsRowImg" loading="lazy" />
-        <h3 class="projectsRowContentTitle" data-aos="fade-up" data-aos-delay="120" data-aos-duration="500"
-          data-aos-once="true">
-          UNFYD PITCH
-        </h3>
-        <p class="projectsRowContentDesc" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500"
-          data-aos-once="true">
-          An Angular and Node.js based project. Developed pitch module that sends Campaigns to targeted Audience
-          through various channels like WhatsApp, Email, SMS and Voice.
-        </p>
-        <div class="tools" data-aos="fade-up" data-aos-delay="190" data-aos-duration="500"
-          data-aos-once="true">
-          <div class="toolsName" *ngFor="let tools of firstPoject">
-            {{ tools.name | uppercase }}
+      <div class="project-row cursor-hover-target" (click)="projectOne()"
+        (mouseenter)="activePreview = 'pitch'" (mouseleave)="activePreview = null"
+        data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+        <div class="project-name">UNFYD PITCH</div>
+        <button class="btn-outline project-view-btn" (click)="projectOne(); $event.stopPropagation()">
+          <span>View Project</span>
+        </button>
+        <div class="project-hover-info">
+          <p class="hover-desc">Pitch module that sends Campaigns to targeted Audience through WhatsApp, Email, SMS and Voice channels.</p>
+          <div class="hover-tools">
+            <span *ngFor="let tool of firstPoject">{{ tool.name }}</span>
           </div>
         </div>
-        <button class="btn-outline project-link-btn" (click)="projectOne()">
-          <i class="bx bx-link-external"></i>
-          <span>Live Link</span>
-        </button>
-      </app-project-items>
+      </div>
     </div>
+  </div>
+
+  <!-- Fixed preview image — bottom right of viewport -->
+  <div class="fixed-preview" [class.active]="activePreview">
+    <img *ngIf="activePreview === 'chatApp'" src="assets/projects/chatApp.png" alt="Real-Time Chat App" />
+    <img *ngIf="activePreview === 'pitch'" src="assets/projects/pitch.png" alt="UNFYD PITCH" />
   </div>
 </section>

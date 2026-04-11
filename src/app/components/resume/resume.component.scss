@@ -3,7 +3,6 @@
 
   .resume-section {
     background: var(--bg-primary);
-    animation: resume-bg-shift 14s ease-in-out infinite;
     padding: var(--space-xl) var(--space-lg);
     position: relative;
 
@@ -17,22 +16,17 @@
         position: relative;
         overflow: hidden;
         border-radius: var(--radius-lg);
-        background: var(--glass-bg);
+        background: rgba(255, 255, 255, 0.02);
         border: 1px solid var(--glass-border);
         transition: var(--transition);
 
         &:hover {
-          border-color: var(--accent-cyan);
+          border-color: var(--text-primary);
           transform: translateY(-2px);
-          box-shadow: var(--shadow-glow-cyan);
 
           .resume-arrow {
             transform: translateX(5px);
-            color: var(--accent-cyan);
-          }
-
-          .resume-glow {
-            opacity: 1;
+            color: var(--text-primary);
           }
         }
 
@@ -46,18 +40,19 @@
           z-index: 1;
 
           .resume-icon {
-            font-size: 2rem;
-            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            color: var(--accent-primary);
             display: flex;
             align-items: center;
           }
 
           .resume-text {
             font-family: var(--font-display);
-            font-size: var(--text-xl);
-            font-weight: 600;
+            font-size: var(--text-2xl);
+            font-weight: 400;
             color: var(--text-primary);
-            letter-spacing: 0.5px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
           }
 
           .resume-arrow {
@@ -68,22 +63,7 @@
             align-items: center;
           }
         }
-
-        .resume-glow {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, rgba(34, 211, 238, 0.05), rgba(99, 102, 241, 0.05));
-          opacity: 0;
-          transition: var(--transition);
-        }
       }
     }
   }
-}
-
-@keyframes resume-bg-shift {
-  0%, 100% { background-color: #0a0e1a; }
-  25%      { background-color: #0e1525; }
-  50%      { background-color: #120d22; }
-  75%      { background-color: #0b1420; }
 }

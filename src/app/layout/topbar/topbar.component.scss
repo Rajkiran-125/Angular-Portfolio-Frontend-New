@@ -8,25 +8,21 @@
     left: 0;
     right: 0;
     transition: var(--transition);
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-lg);
     background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none;
 
     &.scrolled {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(17, 17, 17, 0.4);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .header {
       display: flex;
       max-width: 1400px;
       margin: 0 auto;
-      height: 4.5rem;
+      height: 5rem;
       background: transparent !important;
       box-shadow: none;
       padding: 0;
@@ -37,81 +33,57 @@
 
         .logo-link {
           text-decoration: none;
-          font-family: var(--font-mono);
-          font-size: 1.4rem;
-          font-weight: 600;
           opacity: 0;
           animation: var(--slideTop);
 
-          .logo-bracket {
-            color: var(--accent-cyan);
-          }
-
-          .logo-name {
+          .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
             color: var(--text-primary);
+            letter-spacing: 4px;
             transition: var(--transition);
           }
 
-          &:hover .logo-name {
-            color: var(--accent-cyan);
+          &:hover .logo-text {
+            color: var(--accent-primary);
           }
         }
       }
 
-      #humMenu {
+      .menu-toggle {
         display: flex;
-        flex-direction: column;
-        width: 44px;
-        height: 44px;
         align-items: center;
-        justify-content: center;
-        cursor: pointer;
+        gap: 12px;
+        padding: 10px 20px;
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-full);
+        cursor: none;
         opacity: 0;
         animation: var(--slideTop);
-        border-radius: var(--radius-md);
         transition: var(--transition);
 
         &:hover {
-          background: var(--glass-bg-hover);
+          border-color: var(--text-primary);
+          background: rgba(255, 255, 255, 0.05);
         }
 
-        span {
-          display: block;
-          background-color: var(--accent-cyan);
-          width: 28px;
-          height: 2px;
-          border-radius: 2px;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-          &:nth-of-type(1) {
-            transform: translate(0, -7px);
-          }
-
-          &:nth-of-type(2) {
-            width: 20px;
-            transform: translate(4px, 0);
-          }
-
-          &:nth-of-type(3) {
-            width: 14px;
-            transform: translate(7px, 7px);
-          }
+        .menu-label {
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          color: var(--text-primary);
+          letter-spacing: 2px;
         }
 
-        &.openMenu {
-          span {
-            &:nth-of-type(1) {
-              transform: translate(0, 0) rotate(-45deg);
-              width: 28px;
-            }
-            &:nth-of-type(2) {
-              width: 0;
-              opacity: 0;
-            }
-            &:nth-of-type(3) {
-              width: 28px;
-              transform: translate(0, -4px) rotate(45deg);
-            }
+        .menu-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--accent-primary);
+          transition: var(--transition);
+
+          &.active {
+            background: var(--accent-secondary);
           }
         }
       }
@@ -121,7 +93,7 @@
 
 :host.pc {
   .headerContainer {
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-2xl);
 
     .header {
       height: 5rem;
@@ -134,7 +106,7 @@
           display: flex;
           list-style: none;
           align-items: center;
-          gap: 4px;
+          gap: 0;
 
           li {
             a {
@@ -142,41 +114,56 @@
               align-items: center;
               color: var(--text-secondary);
               font-size: var(--text-sm);
-              font-weight: 500;
-              font-family: var(--font-mono);
+              font-weight: 400;
+              font-family: var(--font-sans);
               text-decoration: none;
-              padding: 8px 16px;
-              border-radius: var(--radius-md);
+              padding: 10px 20px;
               position: relative;
               transition: var(--transition);
               opacity: 0;
               animation: var(--slideTop);
-              animation-delay: calc(0.1s * var(--i));
+              animation-delay: calc(0.1s * var(--i, 0));
+              letter-spacing: 0.5px;
 
-              .nav-number {
-                color: var(--accent-cyan);
-                font-size: var(--text-xs);
-                margin-right: 4px;
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: 6px;
+                left: 20px;
+                right: 20px;
+                height: 1px;
+                background: var(--text-primary);
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
               }
 
               &:hover {
-                color: var(--accent-cyan);
-                background: rgba(34, 211, 238, 0.05);
+                color: var(--text-primary);
+
+                &::after {
+                  transform: scaleX(1);
+                  transform-origin: left;
+                }
               }
 
               &.active {
-                color: var(--accent-cyan);
-                background: rgba(34, 211, 238, 0.1);
+                color: var(--text-primary);
               }
 
               &.nav-btn {
-                border: 1px solid var(--accent-cyan);
+                border: 1px solid var(--glass-border);
                 border-radius: var(--radius-full);
-                padding: 8px 20px;
-                margin-left: 8px;
+                padding: 8px 24px;
+                margin-left: 12px;
+
+                &::after {
+                  display: none;
+                }
 
                 &:hover {
-                  background: rgba(34, 211, 238, 0.1);
+                  border-color: var(--text-primary);
+                  background: rgba(255, 255, 255, 0.05);
                 }
               }
             }
