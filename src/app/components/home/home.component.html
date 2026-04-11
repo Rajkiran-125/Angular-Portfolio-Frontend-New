@@ -1,10 +1,24 @@
 <section class="hero">
-  <!-- Animated background grid -->
+  <!-- Animated background -->
   <div class="hero-bg">
     <div class="grid-pattern"></div>
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
+
+    <!-- Floating particles -->
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+
+    <!-- Pulsing glow rings -->
+    <div class="glow-ring ring-1"></div>
+    <div class="glow-ring ring-2"></div>
   </div>
 
   <div class="hero-container">
@@ -57,8 +71,8 @@
       </div>
     </div>
 
-    <!-- Right: Photo + Decorations -->
-    <div class="hero-visual" data-aos="fade-left" data-aos-delay="600" data-aos-once="true">
+    <!-- Right: Photo + Decorations (desktop only) -->
+    <div class="hero-visual" *ngIf="isMobile" data-aos="fade-left" data-aos-delay="600" data-aos-once="true">
       <div class="photo-wrapper">
         <div class="photo-border-glow"></div>
         <div class="photo-container">

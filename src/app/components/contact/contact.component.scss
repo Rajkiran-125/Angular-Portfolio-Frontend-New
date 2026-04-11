@@ -3,6 +3,7 @@
 
   .contact-section {
     background: var(--bg-secondary);
+    animation: contact-bg-shift 13s ease-in-out infinite;
     padding: var(--space-4xl) var(--space-lg);
     position: relative;
 
@@ -103,4 +104,11 @@
       }
     }
   }
+}
+
+@keyframes contact-bg-shift {
+  0%, 100% { background-color: #0f1629; }
+  25%      { background-color: #131a2f; }
+  50%      { background-color: #18102e; }
+  75%      { background-color: #101d2c; }
 }

@@ -1,12 +1,22 @@
 .drawerContainer {
   margin: 0 auto;
   overflow: visible;
+
+  ::ng-deep .mat-drawer-content {
+    overflow: visible !important;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }
 
 mat-drawer-content {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-primary);
+  overflow: visible !important;
 }
 
 .mobileDrawer {

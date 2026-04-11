@@ -3,6 +3,7 @@
 
   .resume-section {
     background: var(--bg-primary);
+    animation: resume-bg-shift 14s ease-in-out infinite;
     padding: var(--space-xl) var(--space-lg);
     position: relative;
 
@@ -78,4 +79,11 @@
       }
     }
   }
+}
+
+@keyframes resume-bg-shift {
+  0%, 100% { background-color: #0a0e1a; }
+  25%      { background-color: #0e1525; }
+  50%      { background-color: #120d22; }
+  75%      { background-color: #0b1420; }
 }

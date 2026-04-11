@@ -3,6 +3,7 @@
 
   .footer {
     background: var(--bg-secondary);
+    animation: footer-bg-shift 14s ease-in-out infinite;
     padding: var(--space-3xl) var(--space-lg);
     position: relative;
 
@@ -137,4 +138,11 @@
   .footer {
     padding: var(--space-4xl) var(--space-3xl);
   }
+}
+
+@keyframes footer-bg-shift {
+  0%, 100% { background-color: #0f1629; }
+  25%      { background-color: #0d1226; }
+  50%      { background-color: #140e28; }
+  75%      { background-color: #0e1524; }
 }

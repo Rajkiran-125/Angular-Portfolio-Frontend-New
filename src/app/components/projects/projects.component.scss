@@ -3,6 +3,7 @@
 
   .projects-section {
     background: var(--bg-primary);
+    animation: projects-bg-shift 16s ease-in-out infinite;
     padding: var(--space-4xl) var(--space-lg);
     position: relative;
 
@@ -90,4 +91,11 @@
       }
     }
   }
+}
+
+@keyframes projects-bg-shift {
+  0%, 100% { background-color: #0a0e1a; }
+  25%      { background-color: #0c1524; }
+  50%      { background-color: #0a1128; }
+  75%      { background-color: #10102a; }
 }
