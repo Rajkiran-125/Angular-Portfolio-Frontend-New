@@ -79,8 +79,6 @@ export class TopbarComponent {
   }
 
   toggleSidenav = () => {
-    let menu = this.el.nativeElement.querySelector('#humMenu');
-    this.renderer.addClass(menu, 'openMenu');
     this.isMenuOpen = !this.isMenuOpen;
     this.sidenavToggle.emit();
   };

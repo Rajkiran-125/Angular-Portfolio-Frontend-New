@@ -4,6 +4,7 @@
   .login-page {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--bg-primary);
@@ -50,9 +51,7 @@
     }
 
     .back-link {
-      position: absolute;
-      top: var(--space-xl);
-      left: var(--space-xl);
+      align-self: flex-start;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -62,6 +61,7 @@
       font-size: var(--text-sm);
       transition: var(--transition);
       z-index: 1;
+      margin-bottom: var(--space-xl);
 
       &:hover {
         color: var(--accent-cyan);
