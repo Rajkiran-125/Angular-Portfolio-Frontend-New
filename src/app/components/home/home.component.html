@@ -1,4 +1,8 @@
 <section class="hero">
+  <!-- Sticky profile background (mobile only) -->
+  <div class="hero-bg-fixed" *ngIf="!isMobile" aria-hidden="true"></div>
+  <div class="hero-bg-overlay" *ngIf="!isMobile" aria-hidden="true"></div>
+
   <div class="hero-container">
     <!-- Top meta row -->
     <div class="hero-meta" data-aos="fade-down" data-aos-delay="200" data-aos-once="true" data-aos-offset="0">
@@ -20,6 +24,19 @@
         <span class="display-word">HUMANS</span>
       </h1>
       <div class="display-underline" data-aos="fade-right" data-aos-delay="800" data-aos-once="true" data-aos-offset="0"></div>
+    </div>
+
+    <!-- Social links (mobile - placed right under hero-display) -->
+    <div class="mobile-socials" *ngIf="!isMobile" data-aos="fade-up" data-aos-delay="1200" data-aos-once="true" data-aos-offset="0">
+      <a class="social-link cursor-hover-target" (click)="redirectToLinkdin()" title="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+      </a>
+      <a class="social-link cursor-hover-target" (click)="redirectToGithub()" title="GitHub">
+        <i class="bx bxl-github"></i>
+      </a>
+      <a class="social-link cursor-hover-target" (click)="redirectToInsta()" title="Instagram">
+        <i class="bx bxl-instagram-alt"></i>
+      </a>
     </div>
 
     <!-- Description row -->
@@ -60,7 +77,6 @@
   <div class="side-socials" *ngIf="isMobile">
     <a (click)="redirectToLinkdin()" class="cursor-hover-target"><i class="bx bxl-linkedin"></i></a>
     <a (click)="redirectToGithub()" class="cursor-hover-target"><i class="bx bxl-github"></i></a>
-    <a (click)="redirectToInsta()" class="cursor-hover-target"><i class="bx bxl-instagram-alt"></i></a>
     <div class="side-line"></div>
   </div>
 
@@ -70,18 +86,5 @@
       <div class="wheel"></div>
     </div>
     <span class="scroll-text">Scroll</span>
-  </div>
-
-  <!-- Social links (mobile) -->
-  <div class="mobile-socials" *ngIf="!isMobile" data-aos="fade-up" data-aos-delay="1200" data-aos-once="true" data-aos-offset="0">
-    <a class="social-link cursor-hover-target" (click)="redirectToLinkdin()" title="LinkedIn">
-      <i class="bx bxl-linkedin"></i>
-    </a>
-    <a class="social-link cursor-hover-target" (click)="redirectToGithub()" title="GitHub">
-      <i class="bx bxl-github"></i>
-    </a>
-    <a class="social-link cursor-hover-target" (click)="redirectToInsta()" title="Instagram">
-      <i class="bx bxl-instagram-alt"></i>
-    </a>
   </div>
 </section>

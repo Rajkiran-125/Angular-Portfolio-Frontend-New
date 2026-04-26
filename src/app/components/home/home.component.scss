@@ -8,7 +8,36 @@
     align-items: center;
     overflow: hidden;
     background: var(--bg-primary);
-    padding: 6rem 1.5rem 3rem;
+    padding: 4rem 1rem 6rem;
+
+    // Sticky profile background (mobile only) — fixed positioning keeps it
+    // anchored to the viewport while the hero scrolls. The next section's
+    // solid background covers it once the user scrolls past the hero.
+    .hero-bg-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url('../../../assets/img/new_bg2.jpg');
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.55;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(2, 12, 27, 0.7) 60%, rgba(2, 12, 27, 0.92) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
 
     .hero-container {
       position: relative;
@@ -50,12 +79,14 @@
 
     // Main display typography
     .hero-display {
+      width: 100%;
       padding: var(--space-xs) 0;
       margin-top: var(--space-xs);
 
       .display-line {
+        width: 100%;
         font-family: 'Gasoek One', var(--font-display);
-        font-size: clamp(2.5rem, 10vw, 6rem);
+        font-size: clamp(2.5rem, 12vw, 6rem);
         font-weight: 400;
         color: var(--text-primary);
         line-height: 0.95;
@@ -111,11 +142,14 @@
       border-top: none;
 
       .hero-description {
+        width: 100%;
+
         p {
           font-size: var(--text-sm);
           color: var(--text-secondary);
           line-height: 1.7;
-          max-width: 500px;
+          max-width: 100%;
+          width: 100%;
           font-weight: 300;
         }
       }
@@ -155,30 +189,35 @@
 
     // Scroll indicator
     .scroll-indicator {
+      display: flex;
       position: absolute;
-      bottom: 30px;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
-      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      cursor: none;
+      gap: 6px;
+      cursor: pointer;
       opacity: 0;
+      z-index: 2;
       animation: fadeInUp 1s ease forwards;
       animation-delay: 1.5s;
 
       .mouse {
-        width: 22px;
-        height: 36px;
-        border: 1.5px solid var(--text-muted);
-        border-radius: 11px;
+        width: 20px;
+        height: 32px;
+        border: 1.5px solid rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        background: rgba(2, 12, 27, 0.35);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         position: relative;
+        box-shadow: 0 0 12px rgba(252, 231, 0, 0.15);
 
         .wheel {
           width: 2px;
-          height: 7px;
-          background: var(--text-primary);
+          height: 6px;
+          background: var(--accent-primary, #FCE700);
           border-radius: 2px;
           position: absolute;
           top: 6px;
@@ -190,19 +229,20 @@
 
       .scroll-text {
         font-family: var(--font-sans);
-        font-size: 9px;
-        color: var(--text-muted);
+        font-size: 8px;
+        color: rgba(255, 255, 255, 0.7);
         letter-spacing: 3px;
         text-transform: uppercase;
       }
     }
 
-    // Mobile socials
+    // Mobile socials (placed under hero-display)
     .mobile-socials {
       display: flex;
       gap: var(--space-lg);
-      justify-content: center;
-      margin-top: var(--space-md);
+      justify-content: flex-start;
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-xs);
 
       .social-link {
         width: 44px;
@@ -240,6 +280,11 @@
     padding: 0 var(--space-3xl);
     align-items: flex-start;
     padding-top: 70px;
+
+    .hero-bg-fixed,
+    .hero-bg-overlay {
+      display: none;
+    }
 
     .hero-container {
       padding: 0 var(--space-xl);
@@ -397,6 +442,32 @@
         height: 80px;
         background: var(--text-muted);
         margin-top: 8px;
+      }
+    }
+
+    .scroll-indicator {
+      display: flex;
+      bottom: 30px;
+      gap: 8px;
+
+      .mouse {
+        width: 22px;
+        height: 36px;
+        border-color: var(--text-muted);
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+
+        .wheel {
+          height: 7px;
+          background: var(--text-primary);
+        }
+      }
+
+      .scroll-text {
+        font-size: 9px;
+        color: var(--text-muted);
       }
     }
   }
