@@ -20,9 +20,24 @@
 
     <!-- Project list -->
     <div class="projects-list">
+      <div class="project-row cursor-hover-target" (click)="nestFourUs()"
+        (mouseenter)="activePreview = 'nest4us'" (mouseleave)="activePreview = null"
+        data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <div class="project-name">NEST4US Volunteer System</div>
+        <button class="btn-outline project-view-btn" (click)="nestFourUs(); $event.stopPropagation()">
+          <span>View Project</span>
+        </button>
+        <div class="project-hover-info">
+          <p class="hover-desc">A volunteer management platform for a US-based NGO — track service hours, earn recognition tiers &amp; badges, and manage upcoming events.</p>
+          <div class="hover-tools">
+            <span *ngFor="let tool of nest4usProject">{{ tool.name }}</span>
+          </div>
+        </div>
+      </div>
+
       <div class="project-row cursor-hover-target" (click)="projectTwo()"
         (mouseenter)="activePreview = 'chatApp'" (mouseleave)="activePreview = null"
-        data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
         <div class="project-name">Real-Time Chat App</div>
         <button class="btn-outline project-view-btn" (click)="projectTwo(); $event.stopPropagation()">
           <span>View Project</span>
@@ -34,27 +49,12 @@
           </div>
         </div>
       </div>
-
-      <div class="project-row cursor-hover-target" (click)="projectOne()"
-        (mouseenter)="activePreview = 'pitch'" (mouseleave)="activePreview = null"
-        data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
-        <div class="project-name">UNFYD PITCH</div>
-        <button class="btn-outline project-view-btn" (click)="projectOne(); $event.stopPropagation()">
-          <span>View Project</span>
-        </button>
-        <div class="project-hover-info">
-          <p class="hover-desc">Pitch module that sends Campaigns to targeted Audience through WhatsApp, Email, SMS and Voice channels.</p>
-          <div class="hover-tools">
-            <span *ngFor="let tool of firstPoject">{{ tool.name }}</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
   <!-- Fixed preview image — bottom right of viewport -->
   <div class="fixed-preview" [class.active]="activePreview">
+    <img *ngIf="activePreview === 'nest4us'" src="assets/projects/nest4us.png" alt="NEST4US Volunteer System" />
     <img *ngIf="activePreview === 'chatApp'" src="assets/projects/chatApp.png" alt="Real-Time Chat App" />
-    <img *ngIf="activePreview === 'pitch'" src="assets/projects/pitch.png" alt="UNFYD PITCH" />
   </div>
 </section>

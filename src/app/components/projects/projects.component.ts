@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProjectsComponent {
   activePreview: string | null = null;
-  firstPoject: Tools[] = [
+  nest4usProject: Tools[] = [
     {
       name: 'Angular',
     },
@@ -17,10 +17,10 @@ export class ProjectsComponent {
       name: 'Node.js',
     },
     {
-      name: 'Mssql',
+      name: 'Express',
     },
     {
-      name: 'GIT',
+      name: 'MongoDB',
     }
   ];
 
@@ -57,8 +57,8 @@ export class ProjectsComponent {
     },
   ];
 
-  projectOne = () => {
-    window.open(environment.projectOne, '_blank');
+  nestFourUs = () => {
+    window.open(environment.nest4us, '_blank');
   };
 
   projectTwo = () => {
