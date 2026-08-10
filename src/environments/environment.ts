@@ -23,7 +23,8 @@ export const environment = {
 
   // Resume link
 
-  resume:"../../../assets/resume/resume.pdf",
+  // resume:"../../../assets/resume/resume.pdf",
+  resume:"https://drive.google.com/file/d/1DR0V4VhisbvtWkfXu-38GU0TkjMNL23h/view?usp=sharing",
 
   // create email js acccount
 
